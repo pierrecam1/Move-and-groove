@@ -37,7 +37,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
 
       t.string :facebook_id
 
-
       t.timestamps null: false
     end
 

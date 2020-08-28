@@ -27,6 +27,7 @@ gem 'listen'
 gem 'mailcatcher'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'paperclip'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
