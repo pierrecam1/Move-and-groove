@@ -1,0 +1,48 @@
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+      <a class="navbar-brand ml-5" href="http://localhost:3000"><%=image_tag("/assets/logo.svg") %></a>
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mr-5">
+            <% if current_user %>
+                <li class="nav-item">
+                    <a class="nav-link  text-white" href="#" role="button">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  text-white" href="#" role="button">Challenges</a>
+                </li>
+                <li class="nav-item mr-3">
+                    <a class="btn btn-primary f-trump btn-style" href="#" role="button">ADD SESSION</a>
+                </li>
+                </ul>
+                </div>
+                <div class="dropleft nav-avatar">
+                    <% if current_user.photo.present?%>
+                        
+                        <%= link_to image_tag(current_user.photo.url(:thumb), :class => "avatar-picture"), "#" %>
+                    <% else %>
+                        <%= link_to image_tag(current_user.avatar, size:50, :class => "avatar-picture"), '#', :id =>"dropdownMenuButton", :data => { :toggle => 'dropdown'}%>
+                        
+                    <% end %>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>                      
+                </div>
+                    <% else %>
+                        <li class="nav-item">
+                            <%= link_to 'SIGN UP', new_user_registration_path, :class => "btn btn-primary f-trump mr-4 btn-style"  %>
+                        </li>  
+                        <li class="nav-item">
+                            <%= link_to 'LOG IN', new_user_session_path, :class => "btn btn-white f-trump btn-style"  %>
+                        </li>
+                    </ul>
+      </div>
+
+            <% end %>
+        
+    </nav>

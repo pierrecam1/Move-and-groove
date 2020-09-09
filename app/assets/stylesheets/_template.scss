@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'Avenir';
+    src: url('./fonts/Avenir-Roman.ttf');
+    font-weight: normal;
+    font-style: normal;
+
+ }
+
+ 
+@font-face {
+
+
+    font-family: 'Trump';
+    src: url('./fonts/trump-gothic-bold-italic.ttf');
+    font-weight: medium;
+    font-style: italic;
+ }
+
+ @font-face {
+
+
+    font-family: 'Trump';
+    src: url('./fonts/TrumpGothicEastBoldItalic.ttf');
+    font-weight: bold;
+    font-style: italic;
+ }
+
+ .btn-style{font-size: 25px;}
+.btn-white{background-color: white;&:hover{background-color: light-gray;}}
+.btn-facebook{background-color: #3F65B3;}
+.bg-grey{background-color: #F2F2F2;}
+
+
+ // FONT 
+ *{font-family: 'Avenir';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+ h1,h2,h3,h4{font-family: "Trump"; text-transform: uppercase;letter-spacing: 2px;font-weight: bold;}
+ .f-trump{font-family: "Trump"; text-transform: uppercase;letter-spacing: 2px;font-weight: medium;}
+
+ 
+ h1{font-size: 60px;}
+ h2{font-size: 60px;line-height:1;span:not(:last-child){font-size: 30px;}}
+
+
+
+ // NAVIGATION
+
+ .avatar-picture{border-radius: 50px;background-color: white;}
+
+
+ // HEADER 
+
+ .home-header{background: rgb(195,224,244);
+    background: linear-gradient(180deg, rgba(195,224,244,1) 0%, rgba(246,248,244,1) 100%);
+    .position-relative{z-index: 1;height: 520px}
+}
+.svg-home{top:-20px;left: 0%;width: 100%;z-index: -1;height: 600px;width: auto;}
+
+
+// FOOTER
+
+footer{
+    ul li{list-style: none;}
+    hr{border-top: .5px solid white;opacity: .2;}
+
+}
+
+// SECTION 1
+section img{max-width: 100%;}
+.img-rounded{border-radius: 10px;object-fit: cover;height: 500px;}
+.img-s1-profil{top:50%;left: 60%;}
+.img-s2-profil{top:50%;left:-30%}

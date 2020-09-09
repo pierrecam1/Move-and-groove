@@ -27,7 +27,12 @@ gem 'listen'
 gem 'mailcatcher'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 gem 'paperclip'
+gem 'bootstrap'
+gem 'jquery-rails'
+
+ gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

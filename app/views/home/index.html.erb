@@ -1,17 +1,67 @@
-<h1>Bienvenue sur mon site</h1>
+
     <% if current_user %>
-    
-    Hi <%= current_user.username %>
+        <h1 class="text-success" >Bienvenue sur mon site</h1>
+        Hi <%= current_user.username %>
+            <% if current_user.photo.present?%>
+            <%= image_tag current_user.photo.url(:thumb) %>
+            <% else %>
+            Hi <%= image_tag(current_user.avatar, size:50) %>
+            <% end %>
+        <% end %>
 
-
-    <% end %>
-<p>
-
-    <% if user_signed_in? %>
-    
-        <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete %>
-    <% else %>
-        <%= link_to 'Se connecter', new_user_session_path  %>
-        <%= link_to 'Se connecter via Facebook', user_facebook_omniauth_authorize_path  %>
-    <% end %>
-</p>
+            <% if user_signed_in? %>
+            
+                <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete %>
+                <%= link_to 'Edit profil', edit_user_registration_path %>
+            <% else %>
+            <header class="home-header">
+                <div class="container d-flex flex-wrap justify-content-center">
+                    <div class="col-md-6 col-sm-12 align-self-center">
+                        <h1>You like <span class="text-primary f-trump">moove & groove,</span><br>so you're in the right place</h1>
+                        <p class="col-10 pl-0 mt-3">Even if you haven’t run a step yet. Join a team of millions of people who are using the
+                         ASICS Runkeeper™ app to reach their goals, and we’ll show you how running can change your life.</p>
+                    
+                    <%= link_to 'SIGN IN NOW', new_user_registration_path, :class => "btn btn-primary f-trump mr-4 btn-style"  %>
+                    <%= link_to 'Se connecter via Facebook', user_facebook_omniauth_authorize_path, :class => "btn-facebook btn"  %>
+                    </div>
+                    <div class="col-md-6 col-sm-12 position-relative">
+                    <%=image_tag("/assets/home-bg.png", :class=>"position-absolute svg-home") %>
+                    
+                    </div>
+                </div>
+            <% end %>
+            </header>
+            <section>
+                <div class="container d-flex flex-wrap py-sm-2 py-md-7">
+                    <div  class="col-md-6 col-sm-12 align-self-center pb-6">
+                        <%=image_tag("/assets/img-s1.jpg", :class=>"img-s1 img-rounded position-relative") %>
+                        <%=image_tag("/assets/img-profil-s1.png", :class=>"img-s1-profil position-absolute") %>
+                        
+                    </div>
+                    <div  class="col-md-6 col-sm-12" class="col-md-6 col-sm-12 align-self-center">
+                        <h2><span class="f-trump">do more than track your fitness habits</span><br>
+                            <span class="f-trump text-primary">chalenge yourself</span> daily
+                        </h2>
+                        <p  class="col-10 pl-0  mt-3">Even if you haven’t run a step yet. Join a team of millions of
+                         people who are using the ASICS Runkeeper™ app to reach their goals, and we’ll show you how running can change your life.
+                        </p>
+                    </div>
+                </div>
+            </section>
+                        <section class="bg-grey">
+                <div class="container d-flex flex-wrap py-sm-2 py-md-7">
+                    <div  class="col-md-6 col-sm-12" class="col-md-6 col-sm-12 align-self-center">
+                        <h2><span class="f-trump">COMPARE YOUR RESULTS WITH the BEST</span><br>
+                            AND TRY TO <span class="f-trump text-primary">BE THE 1st</span>
+                        </h2>
+                        <p  class="col-10 pl-0  mt-3">Even if you haven’t run a step yet. Join a team of millions of
+                         people who are using the ASICS Runkeeper™ app to reach their goals, and we’ll show you how running can change your life.
+                        </p>
+                    </div>
+                     <div  class="col-md-6 col-sm-12 align-self-center">
+                        <%=image_tag("/assets/img-s2.jpg", :class=>"img-s2 img-rounded position-relative") %>
+                        <%=image_tag("/assets/img-profil-s2.png", :class=>"img-s2-profil position-absolute") %>
+                        
+                    </div>
+                </div>
+            </section>

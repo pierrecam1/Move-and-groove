@@ -4,20 +4,22 @@
     <title>Mooveandgroove</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-
+      <%= render 'layouts/navigation'%>
+      <p class="mb-0 alert-success alert-dismissible fade show" role="alert"><%= notice %></p>
+      <p class="mb-0 alert-success alert-dismissible fade show" role="alert"><%= alert %></p>
     <%= yield %>
 
-    <%= debug user_signed_in? %>
-    <%= debug session.to_hash %>
+  <!-- <%= debug user_signed_in? %>
+    <%= debug session.to_hash %> --> 
 
-
+   <%= render 'layouts/footer'%>
   </body>
 </html>
