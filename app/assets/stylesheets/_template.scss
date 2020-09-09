@@ -25,11 +25,10 @@
     font-style: italic;
  }
 
- .btn-style{font-size: 25px;}
+ .btn-style{font-size: 25px;padding-left: 25px;padding-right: 25px;}
 .btn-white{background-color: white;&:hover{background-color: light-gray;}}
-.btn-facebook{background-color: #3F65B3;}
+.btn-facebook{background-color: #3F65B3; border-radius: 5px!important;color: white;&:hover{background-color: #1d4caa;color:white}}
 .bg-grey{background-color: #F2F2F2;}
-
 
  // FONT 
  *{font-family: 'Avenir';
@@ -57,8 +56,9 @@
     .position-relative{z-index: 1;height: 520px}
 }
 .svg-home{top:-20px;left: 0%;width: 100%;z-index: -1;height: 600px;width: auto;}
-
-
+// HEADER SIGN IN / LOG IN
+.form-header{overflow: hidden;}
+.img-log-sign{top:7%;height: 115%;width:auto;left: 50%;z-index: 0;}
 // FOOTER
 
 footer{

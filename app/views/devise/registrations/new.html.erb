@@ -1,48 +1,50 @@
-<header class="home-header position-relative">
-      <%=image_tag("/assets/home-bg.png", :class=>"position-absolute svg-home") %>
+<header class="home-header form-header position-relative">
+<%=image_tag("/assets/home-bg.png", :class=>"position-absolute img-log-sign") %>
+  <div class="container py-5">
 
-  <div class="container py-7">
-
-    <div class="card p-3 col-4 mx-auto shadow text-center ">
+    <div class="card p-3 col-sm-12 col-md-10 col-lg-6 col-xl-4 mx-auto shadow">
       <h2>CREATE YOUR ACCOUNT</h2>
-
+      <hr>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
-
-        <div class="field">
-          <%= f.label :username %><br />
-          <%= f.text_field :username, autocomplete: "email" %>
+        <div class="d-flex">
+          <div class="field mb-2 col-6">
+            <%= f.label :username %><br />
+            <%= f.text_field :username, autocomplete: "email", class:"w-100" %>
+          </div>
+          
+          <div class="field mb-2 col-6">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"w-100" %>
+          </div>
         </div>
-        
-        <div class="field">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <div class="d-flex">
+          <div class="field mb-2  col-6">
+            <%= f.label :password %>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters min)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "new-password", class:"w-100" %>
+          </div>
+          <div class="field mb-2  col-6">
+            <%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"w-100" %>
+          </div>
         </div>
-        
-        <div class="field">
+        <div class="field mb-2 col-6">
           <%= f.label :photo %><br />
           <%= f.file_field :photo%>
         </div>
 
-        <div class="field">
-          <%= f.label :password %>
-          <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
-          <%= f.password_field :password, autocomplete: "new-password" %>
-        </div>
-
-        <div class="field">
-          <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-        </div>
-
         <div class="actions">
-          <%= f.submit "Sign up" %>
+          <%= f.submit "CREATE AN ACCOUNT", :class=> "btn btn-primary f-trump mt-3 mr-4 btn-style" %>
         </div>
       <% end %>
-
+      <hr>      
       <%= render "devise/shared/links" %>
+      <hr>
+      <%= link_to 'Connect with Facebook', user_facebook_omniauth_authorize_path, :class => "btn-facebook btn"  %>
+
     </div>
   </div>
 </header>
