@@ -24,6 +24,7 @@
     font-weight: bold;
     font-style: italic;
  }
+body{padding-top: 94.6562px;}
 
  .btn-style{font-size: 25px;padding-left: 25px;padding-right: 25px;}
 .btn-white{background-color: white;&:hover{background-color: light-gray;}}
@@ -45,17 +46,17 @@
 
 
  // NAVIGATION
-
+.navbar{z-index: 10001;}
  .avatar-picture{border-radius: 50px;background-color: white;}
 
 
  // HEADER 
 
  .home-header{background: rgb(195,224,244);
-    background: linear-gradient(180deg, rgba(195,224,244,1) 0%, rgba(246,248,244,1) 100%);
+    background: linear-gradient(200deg, rgba(195,224,244,1) 0%, rgba(246,248,244,1) 100%);
     .position-relative{z-index: 1;height: 520px}
 }
-.svg-home{top:-20px;left: 0%;width: 100%;z-index: -1;height: 600px;width: auto;}
+.svg-home{top:-20px;left: 0%;width: 100%;z-index: 1;height: 600px;width: auto;}
 // HEADER SIGN IN / LOG IN
 .form-header{overflow: hidden;}
 .img-log-sign{top:7%;height: 115%;width:auto;left: 50%;z-index: 0;}
@@ -81,7 +82,7 @@ section img{max-width: 100%;}
 .templace{background-color: lightblue;width: 100%;height: 500px;}
 
 #dashboard {
-    .dashboard-profil{text-align: center;
+    #dashboard-profil{text-align: center;z-index:10000;.sticky-top{top:200px}
         .avatar-picture{top:-75px;left:50%;transform:translateX(-50%);border-radius: 150px;width:150px;height:150px;object-fit:cover;object-position:center;}
         .dashboard-name{margin-top: 100px;}
         .svg-graph{width: 100%;}
@@ -89,12 +90,22 @@ section img{max-width: 100%;}
             background-color: lightgray;height: 80%;display: block;content:'';top:10%;right: -50%;}}
     }
     #dashboard-feed{
-        .feed-nav{top: -80px;left: 2%;}
+        .feed-nav{transform:translateY(-80px);left: 0%;
+            margin-bottom: -60px;top:200px;z-index: 5;width: 100%;position: sticky;
+        h2{position: relative;
+            &::after{position:absolute;width: 200%;height: 190%;background-color: white;
+                display:block;content:'';
+                top:-50%;left:-25%;z-index: -1;
+            }
+            }
+        }
         .user-avatar{width: 50px;height: 50px;object-fit: cover;object-position: center;border-radius: 50px;}
         .img-post{object-fit: cover;object-position: center;}
     }
     #dashboard-performance{
-        > h2{top:-15%;left: 0;}
+        .sticky-top{top:200px}
+        h2{transform:translateY(-80px);left: 0;margin-bottom: -60px;}
+        .user-avatar{width: 50px;height: 50px;object-fit: cover;object-position: center;border-radius: 50px;}
         
     }
 }

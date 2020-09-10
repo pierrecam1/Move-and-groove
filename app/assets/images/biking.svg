@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="29.625" height="25.451" viewBox="0 0 29.625 25.451">
+  <g id="Groupe_43" data-name="Groupe 43" transform="translate(-1430.5 -635.799)">
+    <path id="Icon_material-directions-bike" data-name="Icon material-directions-bike" d="M18.487,7.021A2.385,2.385,0,1,0,16.1,4.635,2.392,2.392,0,0,0,18.487,7.021ZM5.964,14.774a5.964,5.964,0,1,0,0,11.927,5.964,5.964,0,1,0,0-11.927Zm6.918-1.789,2.863-2.863.954.954a8.356,8.356,0,0,0,6.083,2.5V11.2a5.926,5.926,0,0,1-4.294-1.789L16.221,7.14a2.924,2.924,0,0,0-1.908-.716,2,2,0,0,0-1.67.716L9.3,10.48a2.355,2.355,0,0,0-.716,1.67,2,2,0,0,0,.716,1.67l3.817,3.34v5.964h2.385V15.728Zm9.78,1.789a5.964,5.964,0,1,0,5.964,5.964A5.906,5.906,0,0,0,22.662,14.774Z" transform="translate(1431 634.049)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <line id="Ligne_9" data-name="Ligne 9" x1="2.207" transform="translate(1436.292 642.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="1"/>
+    <line id="Ligne_10" data-name="Ligne 10" x1="2.207" transform="translate(1435.346 644.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="1"/>
+  </g>
+</svg>
