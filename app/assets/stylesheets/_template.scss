@@ -59,6 +59,8 @@
 // HEADER SIGN IN / LOG IN
 .form-header{overflow: hidden;}
 .img-log-sign{top:7%;height: 115%;width:auto;left: 50%;z-index: 0;}
+
+
 // FOOTER
 
 footer{
@@ -72,3 +74,28 @@ section img{max-width: 100%;}
 .img-rounded{border-radius: 10px;object-fit: cover;height: 500px;}
 .img-s1-profil{top:50%;left: 60%;}
 .img-s2-profil{top:50%;left:-30%}
+
+
+// DASHBOARD
+
+.templace{background-color: lightblue;width: 100%;height: 500px;}
+
+#dashboard {
+    .dashboard-profil{text-align: center;
+        .avatar-picture{top:-75px;left:50%;transform:translateX(-50%);border-radius: 150px;width:150px;height:150px;object-fit:cover;object-position:center;}
+        .dashboard-name{margin-top: 100px;}
+        .svg-graph{width: 100%;}
+        .challenge-separator{position: relative;&::after{position:absolute;width: 1px;
+            background-color: lightgray;height: 80%;display: block;content:'';top:10%;right: -50%;}}
+    }
+    #dashboard-feed{
+        .feed-nav{top: -80px;left: 2%;}
+        .user-avatar{width: 50px;height: 50px;object-fit: cover;object-position: center;border-radius: 50px;}
+        .img-post{object-fit: cover;object-position: center;}
+    }
+    #dashboard-performance{
+        > h2{top:-15%;left: 0;}
+        
+    }
+}
+

@@ -1,0 +1,142 @@
+
+<div class="container py-7" id="dashboard">
+    <div class="d-flex flex-wrap justify-content-between py-7">
+        <div class="col-lg-3 col-md-3 col-sm-12 dashboard-profil position-relative">
+            <div class="card p-3 shadow border-light">
+                <% if current_user.photo.present?%>                     
+                    <%= link_to image_tag(current_user.photo.url(:medium), :class => "avatar-picture position-absolute"), "#" %>
+                    <% else %>
+                    <%= link_to image_tag(current_user.avatar + "?type=large", size:150, :class => "avatar-picture position-absolute"), '#' %>              
+                <% end %>
+                <h2 class="dashboard-name"><%= current_user.username%></h2>
+                <hr>
+                <div class="d-flex justify-content-between">
+                    <div><h4>30</h4><p>Following</p></div>
+                    <div><h4>33</h4><p>Followers</p></div>
+                    <div><h4>56</h4><p>Activities</p></div>
+                </div>
+                <hr>
+                <div >
+                    <h3 class="text-left">THIS YEARS</h3>
+                    <%=image_tag("/assets/graph.svg", :class => "svg-graph") %>            
+                </div>
+                <hr>
+                <div class="text-left">
+                    <h3>Challenge</h3>
+                    <div class="card border-light bg-light">
+                        <h3 class="text-center my-2 ">140 km in 2 weeks</h3>
+                        <div class="d-flex justify-content-between p-3">
+                            <div class="challenge-separator"><h1>62%</h1><p></p>of 150 km</div>
+                            <div><h1>2 days</h1><p></p>end of challenge</div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 position-relative" id="dashboard-feed">
+            <div class="position-absolute d-flex feed-nav">
+                <h2><a href="#" class="f-trump mr-3">LAST NEWS</a></h2>
+                <h2><a href="#" class="f-trump text-dark">YOUR SESSIONS</a></h2>
+            </div>
+            <!-- USER POST -->
+            <div class="user-post-session card p-3 border-light shadow mb-3">
+                <div class="d-flex align-items-start">
+                    <%=image_tag("/assets/user.png", :class => "user-avatar") %>
+                    <div class="ml-3">
+                        <h4 class="mb-0">DAVID MILES</h4>
+                        <small>22 August 2020 05:54</small>
+                    </div>
+                    
+                </div>
+                <%=image_tag("/assets/img-post-1.jpg", :class => "img-post mt-3") %>
+                <div class="post-info d-flex align-items-baseline mt-3">
+                    <%=image_tag("/assets/running.svg", :class => "svg-acivities") %>
+                    <h3 class="tilte-article ml-3 mb-0">MORNING JOG</h3>
+                </div>
+                <hr>
+                    <div class="d-flex justify-content-start">
+                        <div class="ml-3"><h4 class="mr-5 mb-0">3.86 km</h4><p class="mb-0">Distance</p></div>
+                        <div><h4 class="mr-5 mb-0">5:13 /km</h4><p class="mb-0">Allure</p></div>
+                        <div><h4 class="mb-0">20min 7s</h4><p class="mb-0">Time</p></div>
+                    </div>
+            </div>
+            <!-- END USER POST -->
+            <!-- USER POST -->
+            <div class="user-post-session card p-3 border-light shadow mb-3">
+                <div class="d-flex align-items-start">
+                    <%=image_tag("/assets/user.png", :class => "user-avatar") %>
+                    <div class="ml-3">
+                        <h4 class="mb-0">DAVID MILES</h4>
+                        <small>22 August 2020 05:54</small>
+                    </div>
+                    
+                </div>
+                <%=image_tag("/assets/img-post-1.jpg", :class => "img-post mt-3") %>
+                <div class="post-info d-flex align-items-baseline mt-3">
+                    <%=image_tag("/assets/running.svg", :class => "svg-acivities") %>
+                    <h3 class="tilte-article ml-3 mb-0">MORNING JOG</h3>
+                </div>
+                <hr>
+                    <div class="d-flex justify-content-start">
+                        <div class="ml-3"><h4 class="mr-5 mb-0">3.86 km</h4><p class="mb-0">Distance</p></div>
+                        <div><h4 class="mr-5 mb-0">5:13 /km</h4><p class="mb-0">Allure</p></div>
+                        <div><h4 class="mb-0">20min 7s</h4><p class="mb-0">Time</p></div>
+                    </div>
+            </div>
+            <!-- END USER POST -->
+            <!-- USER POST -->
+            <div class="user-post-session card p-3 border-light shadow mb-3">
+                <div class="d-flex align-items-start">
+                    <%=image_tag("/assets/user.png", :class => "user-avatar") %>
+                    <div class="ml-3">
+                        <h4 class="mb-0">DAVID MILES</h4>
+                        <small>22 August 2020 05:54</small>
+                    </div>
+                    
+                </div>
+                <%=image_tag("/assets/img-post-1.jpg", :class => "img-post mt-3") %>
+                <div class="post-info d-flex align-items-baseline mt-3">
+                    <%=image_tag("/assets/running.svg", :class => "svg-acivities") %>
+                    <h3 class="tilte-article ml-3 mb-0">MORNING JOG</h3>
+                </div>
+                <hr>
+                    <div class="d-flex justify-content-start">
+                        <div class="ml-3"><h4 class="mr-5 mb-0">3.86 km</h4><p class="mb-0">Distance</p></div>
+                        <div><h4 class="mr-5 mb-0">5:13 /km</h4><p class="mb-0">Allure</p></div>
+                        <div><h4 class="mb-0">20min 7s</h4><p class="mb-0">Time</p></div>
+                    </div>
+            </div>
+            <!-- END USER POST -->
+            <!-- USER POST -->
+            <div class="user-post-session card p-3 border-light shadow mb-3">
+                <div class="d-flex align-items-start">
+                    <%=image_tag("/assets/user.png", :class => "user-avatar") %>
+                    <div class="ml-3">
+                        <h4 class="mb-0">DAVID MILES</h4>
+                        <small>22 August 2020 05:54</small>
+                    </div>
+                    
+                </div>
+                <%=image_tag("/assets/img-post-1.jpg", :class => "img-post mt-3") %>
+                <div class="post-info d-flex align-items-baseline mt-3">
+                    <%=image_tag("/assets/running.svg", :class => "svg-acivities") %>
+                    <h3 class="tilte-article ml-3 mb-0">MORNING JOG</h3>
+                </div>
+                <hr>
+                    <div class="d-flex justify-content-start">
+                        <div class="ml-3"><h4 class="mr-5 mb-0">3.86 km</h4><p class="mb-0">Distance</p></div>
+                        <div><h4 class="mr-5 mb-0">5:13 /km</h4><p class="mb-0">Allure</p></div>
+                        <div><h4 class="mb-0">20min 7s</h4><p class="mb-0">Time</p></div>
+                    </div>
+            </div>
+            <!-- END USER POST -->
+            
+        </div>
+
+        <div class="col-lg-3 col-md-2 col-sm-12 templace position-relative" id="dashboard-performance">
+            <h2 class="position-absolute">TOP PERFORMANCE</h2>
+        </div>
+
+    </div>
+</div>
