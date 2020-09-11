@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  date: 2020-09-10 16:44:31
+  activity: MyString
+  distance: 9.99
+  time: 2020-09-10 16:44:31
+  elevation: 9.99
+  picture: MyString
+
+two:
+  title: MyString
+  date: 2020-09-10 16:44:31
+  activity: MyString
+  distance: 9.99
+  time: 2020-09-10 16:44:31
+  elevation: 9.99
+  picture: MyString

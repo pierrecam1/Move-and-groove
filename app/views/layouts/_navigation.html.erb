@@ -9,20 +9,20 @@
         <ul class="navbar-nav ml-auto mr-5 align-items-baseline">
             <% if current_user %>
                 <li class="nav-item">
-                    <a class="nav-link  text-white" href="#" role="button">Dashboard</a>
+                    <%= link_to "Dashboard", home_dashboard_path, class:"nav-link  text-white" %>
                 </li>
                 <li class="nav-item  mr-3">
                     <a class="nav-link  text-white" href="#" role="button">Challenges</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-primary f-trump btn-style" href="#" role="button">ADD SESSION</a>
+                    <%= link_to "add session", new_post_path, class:"btn btn-primary f-trump btn-style" %>
                 </li>
                 </ul>
                 </div>
                 <div class="dropleft nav-avatar">
                     <% if current_user.photo.present?%>
                         
-                        <%= link_to image_tag(current_user.photo.url(:thumb), :class => "avatar-picture"), "#" %>
+                        <%= link_to image_tag(current_user.photo.url(:thumb), :class => "avatar-picture"), "#", :id =>"dropdownMenuButton", :data => { :toggle => 'dropdown'} %>
                     <% else %>
                         <%= link_to image_tag(current_user.avatar, size:50, :class => "avatar-picture"), '#', :id =>"dropdownMenuButton", :data => { :toggle => 'dropdown'}%>
                         

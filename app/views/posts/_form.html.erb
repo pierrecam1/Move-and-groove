@@ -1,0 +1,55 @@
+
+<%= form_with(model: post, local: true) do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="d-flex flex-wrap">
+      <div class="field col-sm-12 col-lg-12 col-xl-8 mb-3">
+        <%= form.label :title %><br />
+        <%= form.text_field :title, class:"w-100" %>
+      </div>
+
+      <div class="field col-sm-12 col-lg-4 col-xl-4 mb-3">
+        <%= form.label :date %><br />
+        <%= form.datetime_field :date %>
+      </div>
+      <div class="field col-lg-12 mb-3">
+        <%= form.label :activity %><br />
+        <%=  form.collection_select :activity, Post.activities.map{ |a| [a.first,a.first] },  :first, :second %>
+      </div>
+    </div>
+    <hr>
+    <div class="d-flex flex-wrap justify-content-between">
+      <div class="field col-sm-12 col-md-4 mb-3">
+        <%= form.label :distance %><br />
+        <%= form.text_field :distance, placeholder:"In km" %>
+      </div>
+
+      <div class="field col-sm-12 col-md-4 mb-3">
+        <%= form.label :duration %><br />
+        <%= form.time_field :duration %>
+      </div>
+
+      <div class="field col-sm-12 col-md-4 mb-3">
+        <%= form.label :elevation %><br />
+        <%= form.text_field :elevation, placeholder:"In km" %>
+      </div>
+
+      <div class="field col-sm-12 col-md-6 mb-3">
+        <%= form.label :picture %><br />
+        <%= form.file_field :picture %>
+      </div>
+
+      <div class="actions align-self-end col-sm-12 col-md-4">
+        <%= form.submit "Add your session", class:"btn btn-primary f-trump mr-4 btn-style" %>
+      </div>
+  </div>
+    <% end %>

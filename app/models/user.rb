@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   
   attr_accessor :login
-  
+  has_many :articles
   validates :username, presence: true, uniqueness: {case_sensitive: false}, format: {with: /\A[a-zA-Z0-9 _\.]*\z/}
 
   has_attached_file :photo, styles: { medium: "300x300>", thumb: "50x50>" }, default_url: "/images/:style/missing.png"
