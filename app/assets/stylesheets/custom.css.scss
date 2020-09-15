@@ -34,6 +34,15 @@ $spacers: map-merge(
   ),
   $spacers
 );
+// SCROLLBAR
+
+html::-webkit-scrollbar {
+  width: 6px;
+  background-color: rgba(0,0,0,.15); 
+}
+html::-webkit-scrollbar-thumb {
+    background: $blue; 
+}
 
 
 @import "bootstrap/scss/bootstrap";

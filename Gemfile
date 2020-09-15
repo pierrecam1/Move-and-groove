@@ -31,6 +31,7 @@ gem 'omniauth-google-oauth2'
 gem 'paperclip'
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'chartkick'
 
  gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 

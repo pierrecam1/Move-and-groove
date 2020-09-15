@@ -70,6 +70,7 @@
         <div class="col-lg-3 col-md-2 col-sm-12" id="dashboard-performance">
             <div class="sticky-top">
             <h2>TOP&nbsp;PERFORMANCE</h2>
+            <div class="overflow px-3 pb-3">
                 <!-- RUNNING -->
                 <div class="card shadow p-3 border-light mb-3">
                     <div class="performance-info d-flex align-items-baseline">
@@ -205,6 +206,52 @@
                 <!-- END 3 ST-->       
                 </div>
                 <!-- END HIKING -->
+                <!-- HIKING -->
+                <div class="card shadow p-3 border-light">
+                    <div class="performance-info d-flex align-items-baseline">
+                        <%=image_tag("/assets/hiking.svg", :class => "svg-acivities") %>
+                        <h3 class="tilte-article ml-3 mb-0">hiking</h3>
+                    </div>
+                    <hr>
+                    <!-- 1 ST-->
+                    <div class="d-flex align-items-start justify-content-between mb-4">
+                        <div class="d-flex align-items-start">
+                            <%=image_tag("/assets/user.png", :class => "user-avatar") %>
+                            <div class="ml-3">
+                                <h4 class="mb-0">DAVID MILES</h4>
+                                <small>125km this month</small>
+                            </div>
+                        </div>
+                        <%=image_tag("/assets/perf-1.svg" ) %>
+                    </div>
+                <!-- END 1 ST-->
+                <!-- 2 ST-->
+                    <div class="d-flex align-items-start justify-content-between mb-4">
+                        <div class="d-flex align-items-start">
+                            <%=image_tag("/assets/user.png", :class => "user-avatar") %>
+                            <div class="ml-3">
+                                <h4 class="mb-0">DAVID MILES</h4>
+                                <small>125km this month</small>
+                            </div>
+                        </div>
+                        <%=image_tag("/assets/perf-2.svg" ) %>
+                    </div>
+                <!-- END 2 ST-->
+                <!-- 3 ST-->
+                    <div class="d-flex align-items-start justify-content-between">
+                        <div class="d-flex align-items-start">
+                            <%=image_tag("/assets/user.png", :class => "user-avatar") %>
+                            <div class="ml-3">
+                                <h4 class="mb-0">DAVID MILES</h4>
+                                <small>125km this month</small>
+                            </div>
+                        </div>
+                        <%=image_tag("/assets/perf-3.svg" ) %>
+                    </div>
+                <!-- END 3 ST-->       
+                </div>
+                <!-- END HIKING -->                
+            </div>
             </div>
         </div>
         <!--  END PERFORMANCE -->

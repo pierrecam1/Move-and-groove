@@ -100,13 +100,29 @@ section img{max-width: 100%;}
             }
         }
         .user-avatar{width: 50px;height: 50px;object-fit: cover;object-position: center;border-radius: 50px;}
-        .img-post{object-fit: cover;object-position: center;}
+        
     }
     #dashboard-performance{
         .sticky-top{top:200px}
+        .overflow{height: 600px;overflow-y: scroll;overflow-x: visible;
+            &::-webkit-scrollbar {
+                width: 6px;
+                background-color: rgba(0,0,0,.15); 
+              }
+              &::-webkit-scrollbar-thumb {
+                  background:#2C82FF; 
+              }
+        }
         h2{transform:translateY(-80px);left: 0;margin-bottom: -60px;}
         .user-avatar{width: 50px;height: 50px;object-fit: cover;object-position: center;border-radius: 50px;}
         
     }
 }
 
+// SHOW POST
+.bg-form{background: linear-gradient(200deg, rgba(195,224,244,1) 0%, rgba(246,248,244,1) 100%);}
+
+
+// MULTIPLE 
+
+.img-post{object-fit: cover;object-position: center;}

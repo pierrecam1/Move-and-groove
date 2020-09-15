@@ -1,39 +1,67 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @post.date %>
-</p>
-
-<p>
-  <strong>Activity:</strong>
-  <%= @post.activity %>
-</p>
-
-<p>
-  <strong>Distance:</strong>
-  <%= @post.distance %>
-</p>
-
-<p>
-  <strong>Duration:</strong>
-  <%= @post.duration %>
-</p>
-
-<p>
-  <strong>Elevation:</strong>
-  <%= @post.elevation %>
-</p>
-
-<p>
-  <strong>Picture:</strong>
-  <%= @post.picture %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<div class="bg-form">
+  <div class="col-sm-12 col-md-8 col-lg-8 col-xl-6 mx-auto pt-5">
+    <div class="user-post-session card p-3 border-light shadow mb-3">
+                    <div class="d-flex align-items-start">
+                        <% if @post.user.photo.present?%>
+                            <%= image_tag(@post.user.photo.url(:thumb), :class => "avatar-picture") %>
+                        <% else %>
+                            <%= image_tag(@post.user.avatar, size:50, :class => "avatar-picture")%>
+                        <% end %>
+                        <div class="ml-3">
+                            <h4 class="mb-0"><%= @post.user.username %></h4>
+                            <small><%= time_tag(@post.date)%></small>
+                        </div>
+                    </div>
+                    <%= image_tag @post.picture.url(:large), :class => "img-post mt-3" %>
+                    <div class="post-info d-flex align-items-baseline mt-3">
+                        <% if @post.activity == "Running"%>
+                            <%=image_tag("/assets/running.svg", :class => "svg-acivities") %>
+                        <% end %>
+                        <% if @post.activity == "Hiking"%>
+                            <%=image_tag("/assets/hiking.svg", :class => "svg-acivities") %>
+                        <% end %>
+                        <% if @post.activity == "Cycling"%>
+                            <%=image_tag("/assets/cycling.svg", :class => "svg-acivities") %>
+                        <% end %>
+                        <% if @post.activity == "Swimming"%>
+                            <%=image_tag("/assets/swimming.svg", :class => "svg-acivities") %>
+                        <% end %>
+                        <% if @post.activity == "Wheelchair"%>
+                            <%=image_tag("/assets/wheelchair.svg", :class => "svg-acivities") %>
+                        <% end %>
+                        <% if @post.activity == "Moutain_Biking"%>
+                            <%=image_tag("/assets/cycling.svg", :class => "svg-acivities") %>
+                        <% end %>
+                        <% if @post.activity == "Snowboarding"%>
+                            <%=image_tag("/assets/snowboarding.svg", :class => "svg-acivities") %>
+                        <% end %>
+                        <% if @post.activity == "Skiing"%>
+                            <%=image_tag("/assets/skiing.svg", :class => "svg-acivities") %>
+                        <% end %>                                        
+                        <% if @post.activity == "Walking"%>
+                            <%=image_tag("/assets/walking.svg", :class => "svg-acivities") %>
+                        <% end %>
+                        <% if @post.activity == "Rowing"%>
+                            <%=image_tag("/assets/rowing.svg", :class => "svg-acivities") %>
+                        <% end %>
+                        <% if @post.activity == "Wakeboard"%>
+                            <%=image_tag("/assets/wakeboard.svg", :class => "svg-acivities") %>
+                        <% end %>
+                        <h3 class="tilte-article ml-3 mb-0"><%= @post.title %></h3>
+                    </div>
+                    <hr>
+                        <div class="d-flex justify-content-start">
+                            <div class="ml-3"><h4 class="mr-5 mb-0"><%= @post.distance %> km</h4><p class="mb-0">Distance</p></div>
+                            <div><h4 class="mr-5 mb-0"><%= @post.duration %></h4><p class="mb-0">Duration</p></div>
+                            <% if @post.elevation.present?%>
+                            <div><h4 class="mb-0"><%= @post.elevation %></h4><p class="mb-0">Elevation</p></div>
+                            <% end %>
+                        </div>
+                </div>
+  </div>
+  <div class="col-sm-12 col-md-8 col-lg-8 col-xl-6 mx-auto pt-3 pb-5">          
+    <%= link_to 'Edit', edit_post_path(@post) %> |
+    <%= link_to 'Back', posts_path %>
+  </div>
+</div>

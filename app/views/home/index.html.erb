@@ -1,19 +1,4 @@
 
-    <% if current_user %>
-        <h1 class="text-success" >Bienvenue sur mon site</h1>
-        Hi <%= current_user.username %>
-            <% if current_user.photo.present?%>
-            <%= image_tag current_user.photo.url(:thumb) %>
-            <% else %>
-            Hi <%= image_tag(current_user.avatar, size:50) %>
-            <% end %>
-        <% end %>
-
-            <% if user_signed_in? %>
-            
-                <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete %>
-                <%= link_to 'Edit profil', edit_user_registration_path %>
-            <% else %>
             <header class="home-header">
                 <div class="container d-flex flex-wrap justify-content-center">
                     <div class="col-md-6 col-sm-12 align-self-center">
@@ -65,5 +50,3 @@
                     </div>
                 </div>
             </section>
-            
-            <% end %>
