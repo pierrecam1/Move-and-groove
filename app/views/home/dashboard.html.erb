@@ -33,91 +33,13 @@
              </div>
         </div>
 
-        <div class="col-lg-6 col-md-6 col-sm-12 position-relative" id="dashboard-feed">
+    <div class="col-lg-6 col-md-6 col-sm-12 position-relative" id="dashboard-feed">
         <div>
             <div class="d-flex feed-nav">
                 <h2 class="mb-0"><a href="/home/dashboard" class="f-trump mr-3">LAST NEWS</a></h2>
                 <h2 class="mb-0"><a href="/home/my_sessions" class="f-trump text-dark">YOUR SESSIONS</a></h2>
             </div>
-            <% @posts.each do |post| %>
-      <tr>
-      <td><%= post.user.username %></td>
-      <td><%= post.user.avatar %></td>
-        <td><%= post.title %></td>
-        <td><%= post.date %></td>
-        <td><%= post.activity %></td>
-        <td><%= post.distance %></td>
-        <td><%= post.duration %></td>
-        <td><%= post.elevation %></td>
-        
-                <td><%= image_tag post.picture.url(:thumb) %></td>
-
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-            <!-- USER POST -->
-            <% @posts.each_with_index do |post, index| %>
-            <% if @posts.size-1 == index %>
-            </div>
-            <div class="user-post-session card p-3 border-light shadow mb-3">
-                <div class="d-flex align-items-start">
-                    <% if post.user.photo.present?%>
-                        <%= image_tag(post.user.photo.url(:thumb), :class => "avatar-picture") %>
-                    <% else %>
-                        <%= image_tag(post.user.avatar, size:50, :class => "avatar-picture")%>
-                    <% end %>
-                    <div class="ml-3">
-                        <h4 class="mb-0"><%= post.user.username %></h4>
-                        <small><%= time_tag(post.date)%></small>
-                    </div>
-                </div>
-                <%= image_tag post.picture.url(:large), :class => "img-post mt-3" %>
-                <div class="post-info d-flex align-items-baseline mt-3">
-                    <%=image_tag("/assets/running.svg", :class => "svg-acivities") %>
-                    <h3 class="tilte-article ml-3 mb-0"><%= post.title %></h3>
-                </div>
-                <hr>
-                    <div class="d-flex justify-content-start">
-                        <div class="ml-3"><h4 class="mr-5 mb-0"><%= post.distance %> km</h4><p class="mb-0">Distance</p></div>
-                        <div><h4 class="mr-5 mb-0"><%= post.duration %></h4><p class="mb-0">Duration</p></div>
-                        <% if post.elevation.present?%>
-                        <div><h4 class="mb-0"><%= post.elevation %></h4><p class="mb-0">Elevation</p></div>
-                        <% end %>
-                    </div>
-            </div>
-                    <% else %>
-                    
-                    
-                                   <div class="user-post-session card p-3 border-light shadow mb-3">
-                <div class="d-flex align-items-start">
-                    <% if post.user.photo.present?%>
-                        <%= image_tag(post.user.photo.url(:thumb), :class => "avatar-picture") %>
-                    <% else %>
-                        <%= image_tag(post.user.avatar, size:50, :class => "avatar-picture")%>
-                    <% end %>
-                    <div class="ml-3">
-                        <h4 class="mb-0"><%= post.user.username %></h4>
-                        <small><%= time_tag(post.date)%></small>
-                    </div>
-                </div>
-                <%= image_tag post.picture.url(:large), :class => "img-post mt-3" %>
-                <div class="post-info d-flex align-items-baseline mt-3">
-                    <%=image_tag("/assets/running.svg", :class => "svg-acivities") %>
-                    <h3 class="tilte-article ml-3 mb-0"><%= post.title %></h3>
-                </div>
-                <hr>
-                    <div class="d-flex justify-content-start">
-                        <div class="ml-3"><h4 class="mr-5 mb-0"><%= post.distance %> km</h4><p class="mb-0">Distance</p></div>
-                        <div><h4 class="mr-5 mb-0"><%= post.duration %></h4><p class="mb-0">Duration</p></div>
-                        <% if post.elevation.present?%>
-                        <div><h4 class="mb-0"><%= post.elevation %></h4><p class="mb-0">Elevation</p></div>
-                        <% end %>
-                    </div>
-            </div>
-                    <% end %>
-            <% end %>
+            <%= render "feed"%>
             <!-- END USER POST -->
 
             <!-- USER POST INTACT

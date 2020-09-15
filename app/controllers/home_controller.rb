@@ -9,5 +9,6 @@ class HomeController < ApplicationController
     @posts = Post.all
   end
   def my_sessions
+    @posts = Post.where(:user_id => current_user)
   end
 end
