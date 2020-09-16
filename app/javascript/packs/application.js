@@ -21,8 +21,10 @@ require("chart.js")
 // const imagePath = (name) => images(name, true)
 
 
-document.getElementById('challenge_difficulty').addEventListener('change', function (e) {
-    if (e.target.value === "Hard") {
-      alert('Selected');
-    }
-  });
+
+$(function () {
+    $('#challenge_activity').change(function () {
+        $('#myAnswers > div').hide();
+        $('#myAnswers').find('.' + $(this).val()).fadeIn('slow');
+    });
+});
