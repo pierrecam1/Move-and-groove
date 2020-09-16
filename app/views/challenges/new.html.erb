@@ -1,0 +1,11 @@
+<header class="home-header">
+    <div class="container py-5">
+        <div class="card p-3 col-sm-12 col-md-10 col-lg-6 col-xl-6 mx-auto shadow">
+            <h1>New Challenge</h1>
+            <%= render 'form', challenge: @challenge %>
+        </div>
+        <div class="mt-3 col-sm-12 col-md-10 col-lg-6 col-xl-6 mx-auto">
+            <%= link_to 'Back', challenges_path %>
+        </div >
+    </div>
+</header>

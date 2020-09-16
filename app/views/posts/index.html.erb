@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+
 <h1>Posts</h1>
 
 <table>
@@ -19,7 +20,11 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-      <td><%= post.user.username %></td>
+              <td><%= post.date.to_formatted_s(:short) %></td>
+                      <td><%= post.activity %></td>
+
+
+      <!--<td><%= post.user.username %></td>
       <td><%= post.user.avatar %></td>
         <td><%= post.title %></td>
         <td><%= post.date %></td>
@@ -29,7 +34,7 @@
         <td><%= post.elevation %></td>
         
                 <td><%= image_tag post.picture.url(:thumb) %></td>
-
+-->
         <td><%= link_to 'Show', post %></td>
         <% if user_signed_in? && post.user == current_user %>
           <td><%= link_to 'Edit', edit_post_path(post) %></td>

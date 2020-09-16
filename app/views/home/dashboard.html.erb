@@ -1,4 +1,5 @@
 <div class="container py-7" id="dashboard">
+
     <div class="d-flex flex-wrap justify-content-between pt-7">
         <div class="col-lg-3 col-md-3 col-sm-12 position-relative" id="dashboard-profil">
             <div class="card p-3 shadow border-light sticky-top">
@@ -16,8 +17,11 @@
                 </div>
                 <hr>
                 <div >
-                    <h3 class="text-left">THIS YEARS</h3>
-                    <%=image_tag("/assets/graph.svg", :class => "svg-graph") %>            
+                    <h3 class="text-left">THIS MONTH</h3>
+                    
+                    <div>
+                    <%= column_chart @data.group_by_day_of_month(:date).sum(:distance), colors: ["#2C82FF", "#2C82FF"],width: "100%", label: "Value", messages: {empty: "No data"} %>
+                    </div>
                 </div>
                 <hr>
                 <div class="text-left">

@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_11_144001) do
+ActiveRecord::Schema.define(version: 2020_09_16_095402) do
+
+  create_table "challenges", force: :cascade do |t|
+    t.string "title"
+    t.decimal "number_of_day"
+    t.integer "activity"
+    t.integer "difficulty"
+    t.decimal "distance"
+    t.string "deadline"
+    t.decimal "elevation"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "title"

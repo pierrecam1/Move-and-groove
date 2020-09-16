@@ -8,4 +8,5 @@ class Post < ApplicationRecord
     validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
 
     enum activity: [:Running, :Hiking, :Cycling, :Swimming, :Wheelchair,  :Moutain_Biking, :Snowboarding, :Skiing, :Walking, :Rowing, :Wakeboard]
+
 end

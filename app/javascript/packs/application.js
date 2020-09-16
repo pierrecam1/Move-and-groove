@@ -7,6 +7,8 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require("chartkick")
+require("chart.js")
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
@@ -19,3 +21,8 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 
 
+document.getElementById('challenge_difficulty').addEventListener('change', function (e) {
+    if (e.target.value === "Hard") {
+      alert('Selected');
+    }
+  });

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :challenges
   resources :posts
   default_url_options :host => "localhost:3000"
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
