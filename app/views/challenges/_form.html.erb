@@ -11,38 +11,45 @@
     </div>
   <% end %>
   <div class="d-flex justify-content-between flex-wrap">
-    <div class="field col-sm-12 col-lg-12 col-xl-8 mb-3">
+    <div class="field col-sm-12 col-md-8 col-lg-8 col-xl-5 mb-3">
       <%= form.label :title %>
       <%= form.text_field :title, class:"w-100"%>
     </div>
-
     <div class="field col-sm-12 col-lg-4 col-xl-4 mb-3">
       <%= form.label :activity %><br />
         <%=  form.collection_select :activity, Challenge.activities.map{ |a| [a.first,a.first] },  :first, :second %>
     </div>
-
-    <div class="field col-sm-12 col-lg-4 col-xl-4 mb-3">
+    <div class="field col-sm-12 col-lg-4 col-xl-3 mb-3">
       <%= form.label :difficulty %><br />
-        <%=  form.collection_select :difficulty, Challenge.difficulties.map{ |b| [b.first,b.first] },  :first, :second %>
-    </div>
-    <div id="myAnswers" class="d-flex-custom justify-content-between flex-wrap">
-      <div class="field col-sm-12 col-lg-4 col-xl-4 mb-3 Hiking fixtures">
-        <%= form.label :distance %>
-        <%= form.text_field :distance %>
-      </div>
-
-      <div class="field col-sm-12 col-lg-4 col-xl-4 mb-3 Hiking fixtures">
+      <%=  form.collection_select :difficulty, Challenge.difficulties.map{ |b| [b.first,b.first] },  :first, :second %>
+    </div> 
+    <div class="field col-sm-12 col-lg-4 col-xl-4 mb-3">
         <%= form.label "Number of days to do it" %>
         <%= form.text_field :deadline %>
+    </div>
+  </div>
+  <hr>
+  <div id="myAnswers" class="d-flex-custom justify-content-between flex-wrap">
+    <div class="field col-sm-12 col-lg-4 col-xl-4 mb-3 Hiking ">
+      <%= form.label :distance %>
+      <%= form.text_field :distance %>
+    </div>
+      <div class="field col-sm-12 col-md-4 mb-3">
+        <%= form.label :duration %><br />
+        <%= form.time_field :duration %>
       </div>
+    <div class="field col-sm-12 col-lg-4 col-xl-4 mb-3  Hiking">
+      <%= form.label :elevation %>
+      <%= form.text_field :elevation %>
+    </div>
+    <div class="field col-sm-12 col-lg-4 col-xl-4 mb-3 fixtures Wakeboard">
+      <%= form.label :trick %>
+      <%= form.text_field :trick %>
+    </div>
+  </div>
+    <hr>
 
-      <div class="field col-sm-12 col-lg-4 col-xl-4 mb-3 fixtures ">
-        <%= form.label :elevation %>
-        <%= form.text_field :elevation %>
-      </div>
-    </div>
-    <div class="actions align-self-end col-sm-12 col-md-4">
-      <%= form.submit "Add your challenge", class:"btn btn-primary f-trump btn-style" %>
-    </div>
+  <div class="actions align-self-end col-sm-12 col-md-4">
+    <%= form.submit "Add your challenge", class:"btn btn-primary f-trump btn-style" %>
   </div>
 <% end %>

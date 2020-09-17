@@ -35,6 +35,7 @@ gem 'chartkick'
 gem 'groupdate'
 
 
+
  gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
 # Use Active Storage variant

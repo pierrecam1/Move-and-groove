@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_16_095402) do
+ActiveRecord::Schema.define(version: 2020_09_17_095151) do
 
   create_table "challenges", force: :cascade do |t|
     t.string "title"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 2020_09_16_095402) do
     t.decimal "elevation"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "trick"
+    t.string "duration"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -38,6 +40,7 @@ ActiveRecord::Schema.define(version: 2020_09_16_095402) do
     t.integer "picture_file_size"
     t.datetime "picture_updated_at"
     t.string "duration"
+    t.string "trick"
   end
 
   create_table "users", force: :cascade do |t|

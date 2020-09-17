@@ -4,11 +4,14 @@
 // that code so it'll be compiled.
 import 'bootstrap'
 require("@rails/ujs").start()
-require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("chartkick")
 require("chart.js")
+require("custom/home").start()
+require("turbolinks").start()
+
+
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
@@ -19,12 +22,3 @@ require("chart.js")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
-
-
-
-$(function () {
-    $('#challenge_activity').change(function () {
-        $('#myAnswers > div').hide();
-        $('#myAnswers').find('.' + $(this).val()).fadeIn('slow');
-    });
-});

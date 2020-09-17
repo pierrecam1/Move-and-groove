@@ -36,7 +36,7 @@ body{padding-top: 94.6562px;}
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
- h1,h2,h3,h4{font-family: "Trump"; text-transform: uppercase;letter-spacing: 2px;font-weight: bold;}
+ h1,h2,h3,h4, h5, h6{font-family: "Trump"; text-transform: uppercase;letter-spacing: 2px;font-weight: bold;}
  .f-trump{font-family: "Trump"; text-transform: uppercase;letter-spacing: 2px;font-weight: medium;}
 
  
@@ -129,7 +129,6 @@ section img{max-width: 100%;}
 .fixtures {
     display:none;
 }
-
 // MULTIPLE 
 
 .img-post{object-fit: cover;object-position: center;}

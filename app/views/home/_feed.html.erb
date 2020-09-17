@@ -66,6 +66,9 @@
                         <% if post.elevation.present?%>
                         <div><h4 class="mb-0"><%= post.elevation %></h4><p class="mb-0">Elevation</p></div>
                         <% end %>
+                        <% if post.trick.present?%>
+                        <div><h4 class="mb-0"><%= post.trick %></h4><p class="mb-0">Trick</p></div>
+                        <% end %>
                         <div class="align-self-end ml-auto">
                         <% if user_signed_in? && post.user == current_user %>
                             <%= link_to 'Edit', edit_post_path(post) %> | 

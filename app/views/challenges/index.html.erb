@@ -1,6 +1,5 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Challenges</h1>
+<!--
+<h1>challenge</h1>
 
 <table>
   <thead>
@@ -37,3 +36,64 @@
 <br>
 
 <%= link_to 'New Challenge', new_challenge_path %>
+-->
+
+<header class="bg-dark" style="border-radius: 0 0 50px 50px">
+<div class="container py-7">
+  <h1 class="text-white">CHOOSE YOUR Challenge</h1>
+    <label class="text-white mr-3">Select your activity</label>
+
+    <select >
+        <option value="Running">Running</option>
+        <option value="Hiking">Hiking</option>
+        <option value="Cycling">Cycling</option>
+        <option value="Swimming">Swimming</option>
+        <option value="Wheelchair">Wheelchair</option>
+        <option value="Moutain_Biking">Moutain Biking</option>
+        <option value="Snowboarding">Snowboarding</option>
+        <option value="Skiing">Skiing</option>
+        <option value="Walking">Walking</option>
+        <option value="Rowing">Rowing</option>
+        <option value="Wakeboard">Wakeboard</option>    
+    </select>
+ </div>
+</header>
+
+<section>
+  <div class="container py-3 d-flex flex-wrap justify-content-between">
+    <% @challenges.each do |challenge| %>
+    <div class="col-4">
+      <div class="card p-3 shadow mb-3"
+      <% if challenge.difficulty == "Hard"%> style="border:none; border-top:8px solid #FF2C2C"<% end %>
+        <% if challenge.difficulty == "Medium"%> style="border:none; border-top:8px solid #D38013"<% end %>
+        <% if challenge.difficulty == "Easy"%> style="border:none; border-top:8px solid #2C82FF"<% end %>
+      
+      >
+        <div class="d-flex align-items-baseline">
+          <%=image_tag("/assets/rowing.svg", :class => "svg-acivities") %>
+          <h4 class="ml-3"><%= challenge.title %></h4>
+          <p class="ml-auto mr-0"><%= challenge.difficulty %></p>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-between">
+                            <% if challenge.distance.present?%>                        
+                            <div class="ml-3"><h4 class="mr-5 mb-0"><%= challenge.distance %> km</h4><p class="mb-0">Distance</p></div>
+                            <% end %>
+                            <% if challenge.elevation.present?%>
+                            <div><h4 class="mb-0"><%= challenge.elevation %></h4><p class="mb-0">Elevation</p></div>
+                            <% end %>
+                            <% if challenge.trick.present?%>
+                            <div><h6 class="mb-0 w-50"><%= challenge.trick %></h6><p class="mb-0">Trick</p></div>
+                            <% end %>
+                            <% if challenge.deadline.present?%>                        
+                            <div><h4 class="mr-5 mb-0"><%= pluralize(challenge.deadline, 'day') %></h4><p class="mb-0">Deadline</p></div>
+                            <% end %>
+        </div>
+        <hr>
+        <p class="text-center mb-1">Accept challenge</p>
+                <%=image_tag("/assets/like.svg", :class => "svg-acivities") %>
+    </div>
+  </div>
+  <% end %>
+ 
+</section>
