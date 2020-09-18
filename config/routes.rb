@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :challenges
+  resources :challenges do
+    resources :likes
+  end
+
   resources :posts
   default_url_options :host => "localhost:3000"
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
@@ -8,6 +11,11 @@ Rails.application.routes.draw do
   
   get 'home/dashboard'
   get 'home/my_sessions'
+  get 'mychallenges', to: 'challenges#mychallenges'
+  get 'users/index'
+
+
+
 
 
   

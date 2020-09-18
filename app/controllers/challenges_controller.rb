@@ -1,9 +1,14 @@
 class ChallengesController < ApplicationController
   before_action :set_challenge, only: [:show, :edit, :update, :destroy]
 
+
   # GET /challenges
   # GET /challenges.json
   def index
+    @challenges = Challenge.all
+  end
+
+  def mychallenges
     @challenges = Challenge.all
   end
 
@@ -66,6 +71,7 @@ class ChallengesController < ApplicationController
     def set_challenge
       @challenge = Challenge.find(params[:id])
     end
+
 
     # Only allow a list of trusted parameters through.
     def challenge_params

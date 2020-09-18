@@ -61,14 +61,15 @@
 
 <section>
   <div class="container py-3 d-flex flex-wrap justify-content-start">
+  
     <% @challenges.each do |challenge| %>
+    <% pre_like = challenge.likes.find { |like| like.user_id == current_user.id} %>
+      <% if pre_like %>
     <div class="col-4">
       <div class="card p-3 shadow mb-3"
       <% if challenge.difficulty == "Hard"%> style="border:none; border-top:8px solid #FF2C2C"<% end %>
         <% if challenge.difficulty == "Medium"%> style="border:none; border-top:8px solid #D38013"<% end %>
-        <% if challenge.difficulty == "Easy"%> style="border:none; border-top:8px solid #2C82FF"<% end %>
-      
-      >
+        <% if challenge.difficulty == "Easy"%> style="border:none; border-top:8px solid #2C82FF"<% end %>>
         <div class="d-flex align-items-baseline">
           <%=image_tag("/assets/rowing.svg", :class => "svg-acivities") %>
           <h4 class="ml-3"><%= challenge.title %></h4>
@@ -104,6 +105,7 @@
     </div>
     
   </div>
+  <% end %>
   <% end %>
  
 </section>

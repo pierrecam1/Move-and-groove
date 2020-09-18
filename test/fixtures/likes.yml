@@ -1,9 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  post: one
+  challenge: one
   user: one
 
 two:
-  post: two
+  challenge: two
   user: two

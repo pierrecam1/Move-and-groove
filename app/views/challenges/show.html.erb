@@ -34,6 +34,13 @@
   <strong>Elevation:</strong>
   <%= @challenge.elevation %>
 </p>
+          <% pre_like = @challenge.likes.find { |like| like.user_id == current_user.id} %>
+            <% if pre_like %>
+              <%= button_to 'Unlike', challenge_like_path(@challenge, pre_like), method: :delete %>
+            <% else %>
+              <%= button_to 'Like', challenge_likes_path(@challenge), method: :post %>
+          <% end %>
 
+<p><%= @challenge.likes.count %> <%= (@challenge.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 <%= link_to 'Edit', edit_challenge_path(@challenge) %> |
 <%= link_to 'Back', challenges_path %>

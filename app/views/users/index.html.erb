@@ -1,0 +1,18 @@
+
+    <% @users.each do |user| %>
+
+
+            <div class="user-post-session card p-3 border-light shadow mb-3">
+                <div class="d-flex align-items-start">
+                    <% if user.photo.present?%>
+                        <%= image_tag(user.photo.url(:thumb), :class => "avatar-picture") %>
+                    <% else %>
+                        <%= image_tag(user.avatar, size:50, :class => "avatar-picture")%>
+                    <% end %>
+                    <div class="ml-3">
+                        <h4 class="mb-0"><%= user.username %></h4>
+                    </div>
+                </div>
+                </div>
+                
+                <%end%>
