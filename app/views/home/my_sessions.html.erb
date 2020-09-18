@@ -9,10 +9,8 @@
                 <% end %>
                 <h2 class="dashboard-name"><%= current_user.username%></h2>
                 <hr>
-                <div class="d-flex justify-content-between">
-                    <div><h4>30</h4><p>Following</p></div>
-                    <div><h4>33</h4><p>Followers</p></div>
-                    <div><h4>56</h4><p>Activities</p></div>
+                <div class="d-flex justify-content-center">
+                    <div><h3><%= pluralize(@posts.count, 'Activity') %></h3></div>
                 </div>
                 <hr>
                 <div >

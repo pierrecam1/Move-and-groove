@@ -8,6 +8,7 @@ class HomeController < ApplicationController
   def dashboard
     @posts = Post.all
     @data = Post.where(:user_id => current_user)
+    @current_posts = Post.where(:user_id => current_user)
 
 
   end
