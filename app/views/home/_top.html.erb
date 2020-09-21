@@ -1,0 +1,16 @@
+ <% obj.each_with_index do |item, index| %>
+    <div class="d-flex align-items-start justify-content-between mb-4">
+        <div class="d-flex align-items-start">
+            <% if item[0].photo.present?%>
+            <%= image_tag(item[0].photo.url(:thumb), :class => "avatar-picture") %>
+            <% else %>
+                <%= image_tag(item[0].avatar, size:50, :class => "avatar-picture")%>
+            <% end %>
+            <div class="ml-3">
+                <h4 class="mb-0"> <%= item[0].username %></h4>
+                <small><%=item[1]%> km this month</small>
+            </div>
+        </div>
+        <%=image_tag("/assets/perf-#{index}.svg") %>
+    </div>
+<% end %>

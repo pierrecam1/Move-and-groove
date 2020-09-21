@@ -4,12 +4,13 @@
 // that code so it'll be compiled.
 import 'bootstrap'
 require("@rails/ujs").start()
+require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("chartkick")
 require("chart.js")
-require("custom/home").start()
-require("turbolinks").start()
+require("jquery")
+import ("custom/home").start()
 
 
 //= require jquery3

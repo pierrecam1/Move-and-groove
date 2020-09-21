@@ -73,185 +73,41 @@
             <div class="sticky-top">
             <h2>TOP&nbsp;PERFORMANCE</h2>
             <div class="overflow px-3 pb-3">
-                <!-- RUNNING -->
-                <div class="card shadow p-3 border-light mb-3">
+                <!-- RUNNING -->                            
+                <% if Post.where(activity: "Running").present?%>
+                <div class="card shadow px-3 pt-3 border-light mb-3">
                     <div class="performance-info d-flex align-items-baseline">
                         <%=image_tag("/assets/running.svg", :class => "svg-acivities") %>
                         <h3 class="tilte-article ml-3 mb-0">RUNNING</h3>
                     </div>
                     <hr>
-                    <!-- 1 ST-->
-                    <div class="d-flex align-items-start justify-content-between mb-4">
-                        <div class="d-flex align-items-start">
-                            <%=image_tag("/assets/user.png", :class => "user-avatar") %>
-                            <div class="ml-3">
-                                <h4 class="mb-0">DAVID MILES</h4>
-                                <small>125km this month</small>
-                            </div>
-                        </div>
-                        <%=image_tag("/assets/perf-1.svg" ) %>
-                    </div>
-                <!-- END 1 ST-->
-                <!-- 2 ST-->
-                    <div class="d-flex align-items-start justify-content-between mb-4">
-                        <div class="d-flex align-items-start">
-                            <%=image_tag("/assets/user.png", :class => "user-avatar") %>
-                            <div class="ml-3">
-                                <h4 class="mb-0">DAVID MILES</h4>
-                                <small>125km this month</small>
-                            </div>
-                        </div>
-                        <%=image_tag("/assets/perf-2.svg" ) %>
-                    </div>
-                <!-- END 2 ST-->
-                <!-- 3 ST-->
-                    <div class="d-flex align-items-start justify-content-between">
-                        <div class="d-flex align-items-start">
-                            <%=image_tag("/assets/user.png", :class => "user-avatar") %>
-                            <div class="ml-3">
-                                <h4 class="mb-0">DAVID MILES</h4>
-                                <small>125km this month</small>
-                            </div>
-                        </div>
-                        <%=image_tag("/assets/perf-3.svg" ) %>
-                    </div>
-                <!-- END 3 ST-->       
+                   <%= render 'top', obj:@distance_running_sum %>
                 </div>
+                <% end %>
                 <!-- END RUNNING -->
                 <!-- BIKING -->
-                <div class="card shadow p-3 border-light mb-3">
+                <% if Post.where(activity: "Cycling").present?%>
+                <div class="card shadow px-3 pt-3 border-light mb-3">
                     <div class="performance-info d-flex align-items-baseline">
                         <%=image_tag("/assets/biking.svg", :class => "svg-acivities") %>
-                        <h3 class="tilte-article ml-3 mb-0">BIKING</h3>
+                        <h3 class="tilte-article ml-3 mb-0">Biking</h3>
                     </div>
                     <hr>
-                    <!-- 1 ST-->
-                    <div class="d-flex align-items-start justify-content-between mb-4">
-                        <div class="d-flex align-items-start">
-                            <%=image_tag("/assets/user.png", :class => "user-avatar") %>
-                            <div class="ml-3">
-                                <h4 class="mb-0">DAVID MILES</h4>
-                                <small>125km this month</small>
-                            </div>
-                        </div>
-                        <%=image_tag("/assets/perf-1.svg" ) %>
-                    </div>
-                <!-- END 1 ST-->
-                <!-- 2 ST-->
-                    <div class="d-flex align-items-start justify-content-between mb-4">
-                        <div class="d-flex align-items-start">
-                            <%=image_tag("/assets/user.png", :class => "user-avatar") %>
-                            <div class="ml-3">
-                                <h4 class="mb-0">DAVID MILES</h4>
-                                <small>125km this month</small>
-                            </div>
-                        </div>
-                        <%=image_tag("/assets/perf-2.svg" ) %>
-                    </div>
-                <!-- END 2 ST-->
-                <!-- 3 ST-->
-                    <div class="d-flex align-items-start justify-content-between">
-                        <div class="d-flex align-items-start">
-                            <%=image_tag("/assets/user.png", :class => "user-avatar") %>
-                            <div class="ml-3">
-                                <h4 class="mb-0">DAVID MILES</h4>
-                                <small>125km this month</small>
-                            </div>
-                        </div>
-                        <%=image_tag("/assets/perf-3.svg" ) %>
-                    </div>
-                <!-- END 3 ST-->       
+                   <%= render 'top', obj:@distance_biking_sum %>
                 </div>
+                <% end %>
                 <!-- END BIKING -->
                 <!-- HIKING -->
-                <div class="card shadow p-3 border-light">
+                <% if Post.where(activity: "Hiking").present?%>
+                <div class="card shadow px-3 pt-3 border-light mb-3">
                     <div class="performance-info d-flex align-items-baseline">
                         <%=image_tag("/assets/hiking.svg", :class => "svg-acivities") %>
-                        <h3 class="tilte-article ml-3 mb-0">hiking</h3>
+                        <h3 class="tilte-article ml-3 mb-0">Hiking</h3>
                     </div>
                     <hr>
-                    <!-- 1 ST-->
-                    <div class="d-flex align-items-start justify-content-between mb-4">
-                        <div class="d-flex align-items-start">
-                            <%=image_tag("/assets/user.png", :class => "user-avatar") %>
-                            <div class="ml-3">
-                                <h4 class="mb-0">DAVID MILES</h4>
-                                <small>125km this month</small>
-                            </div>
-                        </div>
-                        <%=image_tag("/assets/perf-1.svg" ) %>
-                    </div>
-                <!-- END 1 ST-->
-                <!-- 2 ST-->
-                    <div class="d-flex align-items-start justify-content-between mb-4">
-                        <div class="d-flex align-items-start">
-                            <%=image_tag("/assets/user.png", :class => "user-avatar") %>
-                            <div class="ml-3">
-                                <h4 class="mb-0">DAVID MILES</h4>
-                                <small>125km this month</small>
-                            </div>
-                        </div>
-                        <%=image_tag("/assets/perf-2.svg" ) %>
-                    </div>
-                <!-- END 2 ST-->
-                <!-- 3 ST-->
-                    <div class="d-flex align-items-start justify-content-between">
-                        <div class="d-flex align-items-start">
-                            <%=image_tag("/assets/user.png", :class => "user-avatar") %>
-                            <div class="ml-3">
-                                <h4 class="mb-0">DAVID MILES</h4>
-                                <small>125km this month</small>
-                            </div>
-                        </div>
-                        <%=image_tag("/assets/perf-3.svg" ) %>
-                    </div>
-                <!-- END 3 ST-->       
+                   <%= render 'top', obj:@distance_hiking_sum %>
                 </div>
-                <!-- END HIKING -->
-                <!-- HIKING -->
-                <div class="card shadow p-3 border-light">
-                    <div class="performance-info d-flex align-items-baseline">
-                        <%=image_tag("/assets/hiking.svg", :class => "svg-acivities") %>
-                        <h3 class="tilte-article ml-3 mb-0">hiking</h3>
-                    </div>
-                    <hr>
-                    <!-- 1 ST-->
-                    <div class="d-flex align-items-start justify-content-between mb-4">
-                        <div class="d-flex align-items-start">
-                            <%=image_tag("/assets/user.png", :class => "user-avatar") %>
-                            <div class="ml-3">
-                                <h4 class="mb-0">DAVID MILES</h4>
-                                <small>125km this month</small>
-                            </div>
-                        </div>
-                        <%=image_tag("/assets/perf-1.svg" ) %>
-                    </div>
-                <!-- END 1 ST-->
-                <!-- 2 ST-->
-                    <div class="d-flex align-items-start justify-content-between mb-4">
-                        <div class="d-flex align-items-start">
-                            <%=image_tag("/assets/user.png", :class => "user-avatar") %>
-                            <div class="ml-3">
-                                <h4 class="mb-0">DAVID MILES</h4>
-                                <small>125km this month</small>
-                            </div>
-                        </div>
-                        <%=image_tag("/assets/perf-2.svg" ) %>
-                    </div>
-                <!-- END 2 ST-->
-                <!-- 3 ST-->
-                    <div class="d-flex align-items-start justify-content-between">
-                        <div class="d-flex align-items-start">
-                            <%=image_tag("/assets/user.png", :class => "user-avatar") %>
-                            <div class="ml-3">
-                                <h4 class="mb-0">DAVID MILES</h4>
-                                <small>125km this month</small>
-                            </div>
-                        </div>
-                        <%=image_tag("/assets/perf-3.svg" ) %>
-                    </div>
-                <!-- END 3 ST-->       
-                </div>
+                <% end %>
                 <!-- END HIKING -->                
             </div>
             </div>
