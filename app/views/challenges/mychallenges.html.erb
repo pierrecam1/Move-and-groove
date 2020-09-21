@@ -65,7 +65,7 @@
     <% @challenges.each do |challenge| %>
     <% pre_like = challenge.likes.find { |like| like.user_id == current_user.id} %>
       <% if pre_like %>
-    <div class="col-4">
+    <div class="col-sm-12 col-md-6 col-lg-4">
       <div class="card p-3 shadow mb-3"
       <% if challenge.difficulty == "Hard"%> style="border:none; border-top:8px solid #FF2C2C"<% end %>
         <% if challenge.difficulty == "Medium"%> style="border:none; border-top:8px solid #D38013"<% end %>

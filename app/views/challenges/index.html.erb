@@ -62,7 +62,7 @@
 <section>
   <div class="container py-3 d-flex flex-wrap justify-content-start">
     <% @challenges.each do |challenge| %>
-    <div class="col-4">
+    <div class="col-sm-12 col-md-6 col-lg-4">
       <div class="card p-3 shadow mb-3"
       <% if challenge.difficulty == "Hard"%> style="border:none; border-top:8px solid #FF2C2C"<% end %>
         <% if challenge.difficulty == "Medium"%> style="border:none; border-top:8px solid #D38013"<% end %>
