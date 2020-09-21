@@ -1,6 +1,6 @@
 <div class="container py-7" id="dashboard">
     <div class="d-flex flex-wrap justify-content-between pt-7">
-        <div class="col-lg-3 col-md-3 col-sm-12 position-relative" id="dashboard-profil">
+        <div class="col-lg-3 col-md-4 col-sm-12 position-relative" id="dashboard-profil">
             <div class="card p-3 shadow border-light sticky-top">
                 <% if current_user.photo.present?%>                     
                     <%= link_to image_tag(current_user.photo.url(:medium), :class => "avatar-picture position-absolute"), "#" %>
@@ -10,7 +10,7 @@
                 <h2 class="dashboard-name"><%= current_user.username%></h2>
                 <hr>
                 <div class="d-flex justify-content-center">
-                <div><h3><%= pluralize(@posts.count, 'Activity') %></h3></div>
+                    <div><h3><%= pluralize(@posts.count, 'Activity') %></h3></div>
                 </div>
                 <hr>
                 <div >
@@ -34,81 +34,78 @@
              </div>
         </div>
 
-    <div class="col-lg-6 col-md-6 col-sm-12 position-relative" id="dashboard-feed">
-        <div>
-            <div class="d-flex feed-nav">
-                <h2 class="mb-0"><a href="/home/dashboard" class="f-trump mr-3 text-dark">LAST NEWS</a></h2>
-                <h2 class="mb-0"><a href="/home/my_sessions" class="f-trump">YOUR SESSIONS</a></h2>
+        <div class="col-lg-6 col-md-8 col-sm-12 position-relative" id="dashboard-feed">
+            <div>
+                <div class="d-flex feed-nav">
+                    <h2 class="mb-0"><a href="/home/dashboard" class="f-trump mr-3 text-dark">LAST NEWS</a></h2>
+                    <h2 class="mb-0"><a href="/home/my_sessions" class="f-trump ">YOUR SESSIONS</a></h2>
+                </div>
+                <%= render "feed"%>
             </div>
-            <%= render "feed"%>
-            <!-- END USER POST -->
-
-            <!-- USER POST INTACT
-            <div class="user-post-session card p-3 border-light shadow mb-3">
-                <div class="d-flex align-items-start">
-                    <%=image_tag("/assets/user.png", :class => "user-avatar") %>
-                    <div class="ml-3">
-                        <h4 class="mb-0">DAVID MILES</h4>
-                        <small>22 August 2020 05:54</small>
+            <!-- USER POST EMPTY -->
+            <% unless @posts.present? %>
+                <div class="user-post-session card p-3 border-light shadow mb-3">
+                    <%=image_tag("/assets/therock.jpg", :class => "img-post mt-3") %>
+                    <div class="post-info mt-3">
+                        <h3 class="tilte-article mb-3">No activity yet !</h3>
+                        <p class="mb-0">Please go outside doing some sport and come back add new session</p>
+                        <p><strong>Happy sporting</strong></p>
+                        <%= link_to "add session", new_post_path, class:"btn btn-primary f-trump btn-style float-right" %>
                     </div>
-                    
                 </div>
-                <%=image_tag("/assets/img-post-1.jpg", :class => "img-post mt-3") %>
-                <div class="post-info d-flex align-items-baseline mt-3">
-                    <%=image_tag("/assets/running.svg", :class => "svg-acivities") %>
-                    <h3 class="tilte-article ml-3 mb-0">MORNING JOG</h3>
-                </div>
-                <hr>
-                    <div class="d-flex justify-content-start">
-                        <div class="ml-3"><h4 class="mr-5 mb-0">3.86 km</h4><p class="mb-0">Distance</p></div>
-                        <div><h4 class="mr-5 mb-0">5:13 /km</h4><p class="mb-0">Allure</p></div>
-                        <div><h4 class="mb-0">20min 7s</h4><p class="mb-0">Time</p></div>
-                    </div>
-            </div> -->
-            
-        </div>
+            </div> 
+            <% end %>
         <!--  PERFORMANCE -->
-        <div class="col-lg-3 col-md-2 col-sm-12" id="dashboard-performance">
+        <!--  PERFORMANCE -->
+        <div class="col-lg-3 col-md-12 col-sm-12" id="dashboard-performance">
             <div class="sticky-top">
-            <h2>TOP&nbsp;PERFORMANCE</h2>
-            <div class="overflow px-3 pb-3">
-                <!-- RUNNING -->                            
-                <% if Post.where(activity: "Running").present?%>
-                <div class="card shadow px-3 pt-3 border-light mb-3">
-                    <div class="performance-info d-flex align-items-baseline">
-                        <%=image_tag("/assets/running.svg", :class => "svg-acivities") %>
-                        <h3 class="tilte-article ml-3 mb-0">RUNNING</h3>
+                <div>
+                    <h2>TOP&nbsp;PERFORMANCE</h2>
+                    <div class="overflow pb-3 d-md-flex d-lg-block justify-content-start">
+                        <!-- RUNNING -->                            
+                        <% if Post.where(activity: "Running").present?%>
+                            <div class=" col-md-4 col-lg-12">
+                                <div class="card shadow px-3 pt-3 border-light mb-3">
+                                    <div class="performance-info d-flex align-items-baseline">
+                                        <%=image_tag("/assets/running.svg", :class => "svg-acivities") %>
+                                        <h3 class="tilte-article ml-3 mb-0">RUNNING</h3>
+                                    </div>
+                                    <hr>
+                                    <%= render 'top', obj:@distance_running_sum %>
+                                </div>
+                            </div>
+                        <% end %>
+                        <!-- END RUNNING -->
+                        <!-- BIKING -->
+                        <% if Post.where(activity: "Cycling").present?%>
+                            <div class=" col-md-4 col-lg-12">
+                                <div class="card shadow px-3 pt-3 border-light mb-3">
+                                    <div class="performance-info d-flex align-items-baseline">
+                                        <%=image_tag("/assets/biking.svg", :class => "svg-acivities") %>
+                                        <h3 class="tilte-article ml-3 mb-0">Biking</h3>
+                                    </div>
+                                    <hr>
+                                    <%= render 'top', obj:@distance_biking_sum %>
+                                </div>
+                            </div>
+                        <% end %>
+                        <!-- END BIKING -->
+                        <!-- HIKING -->
+                        <% if Post.where(activity: "Hiking").present?%>
+                            <div class=" col-md-4 col-lg-12">
+                                <div class="card shadow px-3 pt-3 border-light mb-3">
+                                    <div class="performance-info d-flex align-items-baseline">
+                                        <%=image_tag("/assets/hiking.svg", :class => "svg-acivities") %>
+                                        <h3 class="tilte-article ml-3 mb-0">Hiking</h3>
+                                    </div>
+                                    <hr>
+                                    <%= render 'top', obj:@distance_hiking_sum %>
+                                </div>
+                            </div>
+                        <% end %>
+                        <!-- END HIKING -->                
                     </div>
-                    <hr>
-                   <%= render 'top', obj:@distance_running_sum %>
                 </div>
-                <% end %>
-                <!-- END RUNNING -->
-                <!-- BIKING -->
-                <% if Post.where(activity: "Cycling").present?%>
-                <div class="card shadow px-3 pt-3 border-light mb-3">
-                    <div class="performance-info d-flex align-items-baseline">
-                        <%=image_tag("/assets/biking.svg", :class => "svg-acivities") %>
-                        <h3 class="tilte-article ml-3 mb-0">Biking</h3>
-                    </div>
-                    <hr>
-                   <%= render 'top', obj:@distance_biking_sum %>
-                </div>
-                <% end %>
-                <!-- END BIKING -->
-                <!-- HIKING -->
-                <% if Post.where(activity: "Hiking").present?%>
-                <div class="card shadow px-3 pt-3 border-light mb-3">
-                    <div class="performance-info d-flex align-items-baseline">
-                        <%=image_tag("/assets/hiking.svg", :class => "svg-acivities") %>
-                        <h3 class="tilte-article ml-3 mb-0">Hiking</h3>
-                    </div>
-                    <hr>
-                   <%= render 'top', obj:@distance_hiking_sum %>
-                </div>
-                <% end %>
-                <!-- END HIKING -->                
-            </div>
             </div>
         </div>
         <!--  END PERFORMANCE -->
