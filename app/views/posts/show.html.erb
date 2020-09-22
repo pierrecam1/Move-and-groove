@@ -13,7 +13,9 @@
                             <small><%= time_tag(@post.date)%></small>
                         </div>
                     </div>
+                    <% if @post.picture.present?%>
                     <%= image_tag @post.picture.url(:large), :class => "img-post mt-3" %>
+                    <% end %>
                     <div class="post-info d-flex align-items-baseline mt-3">
                         <% if @post.activity == "Running"%>
                             <%=image_tag("/assets/running.svg", :class => "svg-acivities") %>

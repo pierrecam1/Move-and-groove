@@ -23,13 +23,29 @@
                 <hr>
                 <div class="text-left">
                     <h3>Challenge</h3>
-                    <div class="card border-light bg-light">
-                        <h3 class="text-center my-2 ">140 km in 2 weeks</h3>
-                        <div class="d-flex justify-content-between p-3">
-                            <div class="challenge-separator"><h1>62%</h1><p></p>of 150 km</div>
-                            <div><h1>2 days</h1><p></p>end of challenge</div>
-                        </div>
-                    </div>
+                        <% @challenges.each_with_index do |challenge, index| %>
+                            <% pre_like = challenge.likes.find { |like| like.user_id == current_user.id} %>
+                            <% if pre_like %>
+                            <div class="card border-light bg-light p-2 mb-3">
+                                <h3 class="text-center my-2 mb-4 "><%= challenge.title %></h3>
+                                <div class="d-flex justify-content-between flex-wrap ">
+                                    <% if challenge.distance.present?%>                        
+                                        <div class=""><h4 class="mb-0"><%= challenge.distance %> km</h4><p class="mb-0">Distance</p></div>
+                                    <% end %>
+                                    <% if challenge.elevation.present?%>
+                                        <div><h4 class="mb-0"><%= challenge.elevation %></h4><p class="mb-0">Elevation</p></div>
+                                    <% end %>
+                                    <% if challenge.trick.present?%>
+                                        <div><h6 class="mb-0 W-100"><%= challenge.trick %></h6><p class="mb-0">Trick</p></div>
+                                    <% end %>
+                                    <% if challenge.deadline.present?%>                        
+                                        <div><h4 class="mb-0"><%= pluralize(challenge.deadline, 'day') %></h4><p class="mb-0">Deadline</p></div>
+                                    <% end %>
+                                </div>
+                            </div>
+                            <% end %>
+                    
+                        <% end %>
                 </div>
              </div>
         </div>
@@ -110,3 +126,4 @@
         <!--  END PERFORMANCE -->
     </div>
 </div>
+

@@ -2,24 +2,21 @@
 <%= form_with(model: post, local: true) do |form| %>
   <% if post.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-        <% post.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+      <h5><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h5>
     </div>
   <% end %>
   <div class="d-flex flex-wrap">
       <div class="field col-sm-12 col-lg-12 col-xl-8 mb-3">
         <%= form.label :title %><br />
         <%= form.text_field :title, class:"w-100" %>
+        <p class="error text-danger mb-0"><%= @post.errors[:title][0] %></p>
+        <p class="error text-danger mb-0"><%= @post.errors[:title][1] %></p>
       </div>
 
       <div class="field col-sm-12 col-lg-4 col-xl-4 mb-3">
         <%= form.label :date %><br />
         <%= form.datetime_field :date %>
+        <p class="error text-danger mb-0"><%= @post.errors[:date][0] %></p>
       </div>
       <div class="field col-lg-12 mb-3">
         <%= form.label :activity %><br />
@@ -36,6 +33,7 @@
       <div class="field col-sm-12 col-md-4 mb-3">
         <%= form.label :duration %><br />
         <%= form.time_field :duration %>
+        <p class="error text-danger mb-0"><%= @post.errors[:duration][0] %></p>
       </div>
 
       <div class="field col-sm-12 col-md-4 mb-3">

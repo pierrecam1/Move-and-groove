@@ -10,7 +10,7 @@ require("channels")
 require("chartkick")
 require("chart.js")
 require("jquery")
-import ("custom/home").start()
+import ("custom/home") 
 
 
 //= require jquery3

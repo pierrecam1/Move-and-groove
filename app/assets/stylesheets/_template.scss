@@ -146,6 +146,10 @@ section img{max-width: 100%;}
 
 .img-post{object-fit: cover;object-position: center;height: 400px;}
 
+.text-danger::first-letter{
+    text-transform: capitalize;
+}
+
 
 // RESPONSIVE
 

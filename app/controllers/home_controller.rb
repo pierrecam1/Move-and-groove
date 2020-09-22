@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   before_action :authenticate_user!, only: [:dashboard, :my_sessions]
-  before_action :sum_post
+  before_action :sum_post, :set_challenges
   def index
   end
 
@@ -36,6 +36,11 @@ class HomeController < ApplicationController
       @distance =  @hiking_post.group(:user)
       @distance_hiking_sum =  @hiking_post.group(:user).order('sum_distance DESC').limit(3).sum(:distance)
 
+
+    end
+
+    def set_challenges
+      @challenges = Challenge.all
 
     end
 end
