@@ -21,39 +21,7 @@
     <%= image_tag post.picture.url(:large), :class => "img-post mt-3" %>
 <% end %>
 <div class="post-info d-flex align-items-baseline mt-3">
-    <% if post.activity == "Running"%>
-        <%=image_tag("/assets/running.svg", :class => "svg-acivities") %>
-    <% end %>
-    <% if post.activity == "Hiking"%>
-        <%=image_tag("/assets/hiking.svg", :class => "svg-acivities") %>
-    <% end %>
-    <% if post.activity == "Cycling"%>
-        <%=image_tag("/assets/cycling.svg", :class => "svg-acivities") %>
-    <% end %>
-    <% if post.activity == "Swimming"%>
-        <%=image_tag("/assets/swimming.svg", :class => "svg-acivities") %>
-    <% end %>
-    <% if post.activity == "Wheelchair"%>
-        <%=image_tag("/assets/wheelchair.svg", :class => "svg-acivities") %>
-    <% end %>
-    <% if post.activity == "Moutain_Biking"%>
-        <%=image_tag("/assets/cycling.svg", :class => "svg-acivities") %>
-    <% end %>
-    <% if post.activity == "Snowboarding"%>
-        <%=image_tag("/assets/snowboarding.svg", :class => "svg-acivities") %>
-    <% end %>
-    <% if post.activity == "Skiing"%>
-        <%=image_tag("/assets/skiing.svg", :class => "svg-acivities") %>
-    <% end %>                                        
-    <% if post.activity == "Walking"%>
-        <%=image_tag("/assets/walking.svg", :class => "svg-acivities") %>
-    <% end %>
-    <% if post.activity == "Rowing"%>
-        <%=image_tag("/assets/rowing.svg", :class => "svg-acivities") %>
-    <% end %>
-    <% if post.activity == "Wakeboard"%>
-        <%=image_tag("/assets/wakeboard.svg", :class => "svg-acivities") %>
-    <% end %>
+    <%= render 'general/activity', obj:post %>
     <h3 class="tilte-article ml-3 mb-0"><%= post.activity %>: <%= post.title %></h3>
 </div>
 <hr>

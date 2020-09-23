@@ -3,7 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   
   attr_accessor :login
-  has_many :articles
+  has_many :posts
+  has_many :challenges
   has_many :likes, dependent: :destroy
 
   validates :username, presence: true, uniqueness: {case_sensitive: false}, format: {with: /\A[a-zA-Z0-9 _\.]*\z/}

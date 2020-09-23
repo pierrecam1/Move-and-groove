@@ -1,19 +1,25 @@
+
 <%= form_with(model: challenge, local: true) do |form| %>
   <% if challenge.errors.any? %>
     <div id="error_explanation">
       <h5><%= pluralize(challenge.errors.count, "error") %> prohibited this post from being saved:</h5>
+      <ul>
+      <% @challenge.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
     </div>
   <% end %>
   <div class="d-flex justify-content-between flex-wrap">
     <div class="field col-sm-12 col-md-8 col-lg-8 col-xl-5 mb-3">
       <%= form.label :title %>
-      <%= form.text_field :title, class:"w-100"%>
+      <%= form.text_field :title, class:"w-100", placeholder:"Name your challenge"%>
       <p class="error text-danger mb-0"><%= @challenge.errors[:title][0] %></p>
       <p class="error text-danger mb-0"><%= @challenge.errors[:title][1] %></p>
     </div>
     <div class="field col-sm-12 col-lg-4 col-xl-4 mb-3">
       <%= form.label :activity %><br />
-        <%=  form.collection_select :activity, Challenge.activities.map{ |a| [a.first,a.first] },  :first, :second %>
+        <%=  form.collection_select :activity, Challenge.activities.map{ |a| [a.first,a.first] }, :first, :second %>
     </div>
     <div class="field col-sm-12 col-lg-4 col-xl-3 mb-3">
       <%= form.label :difficulty %><br />
@@ -21,31 +27,31 @@
     </div> 
     <div class="field col-sm-12 col-lg-4 col-xl-4 mb-3">
         <%= form.label "Number of days to do it" %>
-        <%= form.text_field :deadline %>
+        <%= form.text_field :deadline, placeholder:"Put a deadline in days" %>
     </div>
   </div>
   <hr>
   <div id="myAnswers" class="d-flex-custom justify-content-between flex-wrap">
-    <div class="field col-sm-12 col-lg-4 col-xl-4 mb-3 Hiking ">
+    <div class="field col-sm-12 col-lg-4 col-xl-4 mb-3  Hiking Running Cycling Swimming Wheelchair Mountain_Biking Snowboarding Skiing Walking Rowing">
       <%= form.label :distance %>
-      <%= form.text_field :distance %>
+      <%= form.text_field :distance, placeholder:"Put a distance in km" %>
     </div>
-      <div class="field col-sm-12 col-md-4 mb-3">
+      <div class="field col-sm-12 col-md-4 mb-3  Hiking Running Cycling Swimming Wheelchair Mountain_Biking Snowboarding Skiing Walking Rowing">
         <%= form.label :duration %><br />
         <%= form.time_field :duration %>
       </div>
-    <div class="field col-sm-12 col-lg-4 col-xl-4 mb-3  Hiking">
+    <div class="field col-sm-12 col-lg-4 col-xl-4 mb-3  Hiking Running Cycling Swimming Wheelchair Mountain_Biking Snowboarding Skiing Walking Rowing">
       <%= form.label :elevation %>
-      <%= form.text_field :elevation %>
+      <%= form.text_field :elevation, placeholder:"Put an elevation in meter" %>
     </div>
-    <div class="field col-sm-12 col-lg-4 col-xl-4 mb-3 fixtures Wakeboard">
+    <div class="field col-sm-12 col-lg-4 col-xl-4 mb-3 fixtures Wakeboard Snowboarding Skiing Wheelchair">
       <%= form.label :trick %>
-      <%= form.text_field :trick %>
+      <%= form.text_field :trick, placeholder:"Name trick to do" %>
     </div>
   </div>
     <hr>
 
   <div class="actions align-self-end col-sm-12 col-md-4">
-    <%= form.submit "Add your challenge", class:"btn btn-primary f-trump btn-style" %>
+    <%= form.submit :class=>"btn btn-primary f-trump btn-style" %>
   </div>
 <% end %>

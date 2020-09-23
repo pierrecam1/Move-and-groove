@@ -2,11 +2,8 @@ class HomeController < ApplicationController
 
   before_action :authenticate_user!, only: [:dashboard, :my_sessions]
   before_action :sum_post, :set_challenges
-  def index
-  end
-
   def dashboard
-    @posts = Post.all
+    @posts = Post.all.order('created_at DESC')
     @data = Post.where(:user_id => current_user)
     @current_posts = Post.where(:user_id => current_user)
 

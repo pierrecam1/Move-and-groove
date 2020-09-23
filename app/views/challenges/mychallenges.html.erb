@@ -71,8 +71,8 @@
         <% if challenge.difficulty == "Medium"%> style="border:none; border-top:8px solid #D38013"<% end %>
         <% if challenge.difficulty == "Easy"%> style="border:none; border-top:8px solid #2C82FF"<% end %>>
         <div class="d-flex align-items-baseline">
-          <%=image_tag("/assets/rowing.svg", :class => "svg-acivities") %>
-          <h4 class="ml-3"><%= challenge.title %></h4>
+              <%= render 'general/activity', obj:challenge %>
+          <h4 class="ml-3"><%= challenge.activity %>: <%= challenge.title %></h4>
           <p class="ml-auto mr-0"><%= challenge.difficulty %></p>
         </div>
         <hr>

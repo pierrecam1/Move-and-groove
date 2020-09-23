@@ -6,51 +6,48 @@
     </div>
   <% end %>
   <div class="d-flex flex-wrap">
-      <div class="field col-sm-12 col-lg-12 col-xl-8 mb-3">
-        <%= form.label :title %><br />
-        <%= form.text_field :title, class:"w-100" %>
-        <p class="error text-danger mb-0"><%= @post.errors[:title][0] %></p>
-        <p class="error text-danger mb-0"><%= @post.errors[:title][1] %></p>
-      </div>
-
-      <div class="field col-sm-12 col-lg-4 col-xl-4 mb-3">
-        <%= form.label :date %><br />
-        <%= form.datetime_field :date %>
-        <p class="error text-danger mb-0"><%= @post.errors[:date][0] %></p>
-      </div>
-      <div class="field col-lg-12 mb-3">
-        <%= form.label :activity %><br />
-        <%=  form.collection_select :activity, Post.activities.map{ |a| [a.first,a.first] },  :first, :second %>
-      </div>
+    <div class="field col-sm-12 col-lg-12 col-xl-8 mb-3">
+      <%= form.label :title  %><br />
+      <%= form.text_field :title, class:"w-100", placeholder:"Name your session" %>
+      <p class="error text-danger mb-0"><%= @post.errors[:title][0] %></p>
+      <p class="error text-danger mb-0"><%= @post.errors[:title][1] %></p>
     </div>
-    <hr>
-    <div class="d-flex flex-wrap justify-content-between">
-      <div class="field col-sm-12 col-md-4 mb-3">
-        <%= form.label :distance %><br />
-        <%= form.text_field :distance, placeholder:"In km" %>
-      </div>
-
-      <div class="field col-sm-12 col-md-4 mb-3">
-        <%= form.label :duration %><br />
-        <%= form.time_field :duration %>
-        <p class="error text-danger mb-0"><%= @post.errors[:duration][0] %></p>
-      </div>
-
-      <div class="field col-sm-12 col-md-4 mb-3">
-        <%= form.label :elevation %><br />
-        <%= form.text_field :elevation, placeholder:"In km" %>
-      </div>
-
-      <div class="field col-sm-12 col-md-6 mb-3">
-        <%= form.label :picture %><br />
-        <%= form.file_field :picture %>
-      </div>
-          <div class="field col-sm-12 col-lg-4 col-xl-4 mb-3  Wakeboard">
-      <%= form.label :trick %>
-      <%= form.text_field :trick %>
+    <div class="field col-sm-12 col-lg-4 col-xl-4 mb-3">
+      <%= form.label :date %><br />
+      <%= form.datetime_field :date %>
+      <p class="error text-danger mb-0"><%= @post.errors[:date][0] %></p>
     </div>
-      <div class="actions align-self-end col-sm-12 col-md-4">
-        <%= form.submit "Add your session", class:"btn btn-primary f-trump mr-4 btn-style" %>
-      </div>
+    <div class="field col-lg-12 mb-3">
+      <%= form.label :activity %><br />
+      <%=  form.collection_select :activity, Post.activities.map{ |a| [a.first,a.first] },  :first, :second %>
+    </div>
   </div>
-    <% end %>
+  <hr>
+  <div  id="myAnswers" class="d-flex flex-wrap justify-content-between">
+    <div class="field col-sm-12 col-md-4 mb-3  Hiking Running Cycling Swimming Wheelchair Mountain_Biking Snowboarding Skiing Walking Rowing">
+      <%= form.label :distance %><br />
+      <%= form.text_field :distance, placeholder:"In km" %>
+    </div>
+    <div class="field col-sm-12 col-md-4 mb-3  Hiking Running Cycling Swimming Wheelchair Mountain_Biking Snowboarding Skiing Walking Rowing">
+      <%= form.label :duration %><br />
+      <%= form.time_field :duration %>
+      <p class="error text-danger mb-0"><%= @post.errors[:duration][0] %></p>
+    </div>
+    <div class="field col-sm-12 col-md-4 mb-3  Hiking Running Cycling Swimming Wheelchair Mountain_Biking Snowboarding Skiing Walking Rowing">
+      <%= form.label :elevation %><br />
+      <%= form.text_field :elevation, placeholder:"In km" %>
+    </div>
+    <div class="field col-sm-12 col-lg-4 col-xl-4 mb-3 fixtures Wakeboard Snowboarding Skiing Wheelchair">
+      <%= form.label :trick %>
+      <%= form.text_field :trick, placeholder:"Name your tricks" %>
+    </div>
+  </div>
+  <div class="field col-sm-12 col-md-6 mb-3">
+    <%= form.label :picture %><br />
+    <%= form.file_field :picture %>
+  </div>
+  <hr>
+  <div class="actions align-self-end col-sm-12 col-md-4">
+    <%= form.submit :class=>"btn btn-primary f-trump mr-4 btn-style" %>
+  </div>
+<% end %>

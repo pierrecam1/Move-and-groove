@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    redirect_to home_dashboard_path
   end
 
   # GET /posts/1
