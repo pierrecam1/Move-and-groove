@@ -172,6 +172,13 @@ h4{font-size: 16px;}
 #dashboard #dashboard-performance h2{margin-top: 150px;}
 #dashboard #dashboard-performance .overflow{overflow: visible;height: auto;}
 
+//NAVIGATION
+    .nav-avatar{
+    position: absolute;
+    right: 90px;
+    top: 22px;
+}
+
 //FOOTER
 footer{
     .text-right, ul{text-align: center !important;padding: 0;}
@@ -189,7 +196,12 @@ footer{
     .img-s2-profil{left: 0%;top:50%;width: 60%;}
     //DASHBOARD
     #dashboard #dashboard-feed .feed-nav{left: 0%;margin-top: 150px;top:180px}
-
+    //NAVIGATION
+    .nav-avatar{
+        position: absolute;
+        right: 90px;
+        top: 22px;
+    }
     #dashboard #dashboard-performance h2{margin-top: 150px;}
     #dashboard #dashboard-performance .overflow{overflow: visible;height: auto;}
     //FOOTER
@@ -210,6 +222,13 @@ footer{
     #dashboard #dashboard-feed .feed-nav h2::after{top: -65%;}
 
     #dashboard #dashboard-performance .overflow{overflow: visible;height: auto;}
+    
+//NAVIGATION
+.nav-avatar{
+    position: absolute;
+    right: 90px;
+    top: 22px;
+}
 }
 @media only screen and (max-width: 1600px) {
 

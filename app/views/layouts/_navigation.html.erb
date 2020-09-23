@@ -1,5 +1,5 @@
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
-      <a class="navbar-brand ml-5" href="http://localhost:3000"><%=image_tag("/assets/logo.svg") %></a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand ml-sm-0 ml-md-5" href="http://localhost:3000"><%=image_tag("/assets/logo.svg") %></a>
       
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -9,21 +9,21 @@
         <ul class="navbar-nav ml-auto mr-5 align-items-baseline">
             <% if current_user %>
                 <li class="nav-item">
-                    <%= link_to "Dashboard", home_dashboard_path, class:"nav-link  text-white" %>
+                    <%= link_to "Dashboard", home_dashboard_path, class:"nav-link  text-white my-md-0 my-3" %>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white mr-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle text-white mr-3  mb-md-0 mb-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Challenges
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <%= link_to "See challenges", challenges_path, class:"nav-link dropdown-item" %>
-                        <%= link_to "My challenges", mychallenges_path, class:"nav-link dropdown-item" %>
+                        <%= link_to "See challenges", challenges_path, class:"nav-link dropdown-item text-dark text-center" %>
+                        <%= link_to "My challenges", mychallenges_path, class:"nav-link dropdown-item text-dark text-center" %>
                         <div class="dropdown-divider"></div>
-                        <%= link_to "Add challenges", new_challenge_path, class:"nav-link dropdown-item" %>
+                        <%= link_to "Add challenges", new_challenge_path, class:"nav-link dropdown-item text-dark text-center" %>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <%= link_to "add session", new_post_path, class:"btn btn-primary f-trump btn-style" %>
+                    <%= link_to "add session", new_post_path, class:"btn btn-primary f-trump btn-style  mb-md-0 mb-3" %>
                 </li>
                 </ul>
                 </div>

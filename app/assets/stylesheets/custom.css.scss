@@ -47,13 +47,3 @@ html::-webkit-scrollbar-thumb {
 
 @import "bootstrap/scss/bootstrap";
 @import "template";
-
-
-
-
-  @media only screen and (max-width:  768px) {
-    .nav-avatar {
-      position: absolute;right: 70px;top:0
-    }
-    img{max-width: 700;}
-  }
