@@ -15,10 +15,16 @@
   <body>
       <%= render 'layouts/navigation'%>
       <% if notice.present?%>
-      <p class="mb-0 alert-success alert-dismissible fade show text-center p-2 fade-out" role="alert"><%= notice %></p>
+      <div class="mb-0 alert-success fade show fade-out position-absolute card shadow" role="alert">
+        <div class="card-header"><h5>Notification</h5></div>
+        <div class="card-body bg-white"><%= notice %></div>
+      </div>
       <% end %>
       <% if alert.present?%>
-      <p class="mb-0 alert-success alert-dismissible fade show text-center p-2 fade-out" role="alert"><%= alert %></p>
+      <div class="mb-0 alert-warning fade show fade-out position-absolute card shadow" role="alert">
+        <div class="card-header"><h5>Notification</h5></div>
+        <div class="card-body bg-white"><%= alert %></div>      
+      </div>
       <% end %>
       
     <%= yield %>

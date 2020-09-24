@@ -3,13 +3,9 @@
     src: url('./fonts/Avenir-Roman.ttf');
     font-weight: normal;
     font-style: normal;
+} 
 
- }
-
- 
 @font-face {
-
-
     font-family: 'Trump';
     src: url('./fonts/trump-gothic-bold-italic.ttf');
     font-weight: medium;
@@ -17,18 +13,21 @@
  }
 
  @font-face {
-
-
     font-family: 'Trump';
     src: url('./fonts/TrumpGothicEastBoldItalic.ttf');
     font-weight: bold;
     font-style: italic;
  }
-body{padding-top: 94.6562px;}
+//NAV FIX
+ body{padding-top: 94.6562px;}
 
- .btn-style{font-size: 25px;padding-left: 25px;padding-right: 25px;}
-.btn-white{background-color: white;&:hover{background-color: light-gray;}}
-.btn-facebook{background-color: #3F65B3; border-radius: 5px!important;color: white;&:hover{background-color: #1d4caa;color:white}}
+.btn-style{font-size: 25px;padding-left: 25px;padding-right: 25px;}
+.btn-white{background-color: white;
+    &:hover{background-color: light-gray;}
+}
+.btn-facebook{background-color: #3F65B3; border-radius: 5px!important;color: white;
+    &:hover{background-color: #1d4caa;color:white}
+}
 .bg-grey{background-color: #F2F2F2;}
 
  // FONT 
@@ -36,28 +35,27 @@ body{padding-top: 94.6562px;}
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
  h1,h2,h3,h4, h5, h6{font-family: "Trump"; text-transform: uppercase;letter-spacing: 2px;font-weight: bold;}
  .f-trump{font-family: "Trump"; text-transform: uppercase;letter-spacing: 2px;font-weight: medium;}
 
- 
  h1{font-size: 60px;}
- h2{font-size: 60px;line-height:1;span:not(:last-child){font-size: 30px;}}
+ h2{font-size: 60px;line-height:1;
+    span:not(:last-child){font-size: 30px;}
+}
 
-
-
- // NAVIGATION
+// NAVIGATION
 .navbar{z-index: 10001;}
  .avatar-picture{width: 50px;height: 50px;object-fit: cover;object-position: center;border-radius: 50px;}
 
-
  // HEADER 
 
- .home-header{background: rgb(195,224,244);
+.home-header{background: rgb(195,224,244);
     background: linear-gradient(200deg, rgba(195,224,244,1) 0%, rgba(246,248,244,1) 100%);
     .position-relative{z-index: 1;height: 520px}
 }
-.svg-home{top:-34px;left: 0%;width: 100%;z-index: 1;height: 600px;width: auto;}
 
+.svg-home{top:-34px;left: 0%;width: 100%;z-index: 1;height: 600px;width: auto;}
 
 // HEADER SIGN IN / LOG IN
 .form-header{overflow: hidden;}
@@ -65,11 +63,9 @@ body{padding-top: 94.6562px;}
 
 
 // FOOTER
-
 footer{
     ul li{list-style: none;}
     hr{border-top: .5px solid white;opacity: .2;}
-
 }
 
 // SECTION 1
@@ -78,9 +74,7 @@ section img{max-width: 100%;}
 .img-s1-profil{top:50%;left: 60%;}
 .img-s2-profil{top:50%;left:-30%}
 
-
 // DASHBOARD
-
 .templace{background-color: lightblue;width: 100%;height: 500px;}
 
 #dashboard {
@@ -88,17 +82,19 @@ section img{max-width: 100%;}
         .avatar-picture{top:-75px;left:50%;transform:translateX(-50%);border-radius: 150px;width:150px;height:150px;object-fit:cover;object-position:center;}
         .dashboard-name{margin-top: 100px;}
         .svg-graph{width: 100%;}
-        .challenge-separator{position: relative;&::after{position:absolute;width: 1px;
-            background-color: lightgray;height: 80%;display: block;content:'';top:10%;right: -50%;}}
+        .challenge-separator{position: relative;
+            &::after{position:absolute;width: 1px;
+            background-color: lightgray;height: 80%;display: block;content:'';top:10%;right: -50%;}
+        }
     }
     #dashboard-feed{
         .feed-nav{transform:translateY(-80px);left: 0%;
             margin-bottom: -60px;top:200px;z-index: 5;width: 100%;position: sticky;
-        h2{
-            &::after{position:absolute;width: 105%;height: 190%;background-color: white;
-                display:block;content:'';
-                top:-50%;left:-2.5%;z-index: -1;
-            }
+            h2{
+                &::after{position:absolute;width: 105%;height: 190%;background-color: white;
+                    display:block;content:'';
+                    top:-50%;left:-2.5%;z-index: -1;
+                }
             }
         }
         .user-avatar{width: 50px;height: 50px;object-fit: cover;object-position: center;border-radius: 50px;}
@@ -121,7 +117,6 @@ section img{max-width: 100%;}
     }
 }
 // CHALLENGE
-
 .challenge-header{position: relative;
 
     &::after{
@@ -150,7 +145,8 @@ section img{max-width: 100%;}
 .text-danger::first-letter{
     text-transform: capitalize;
 }
-
+.fade-out{top: 20px;z-index: 500000;right:20px;width: 300px;}
+.bg-white{background-color: white;}
 
 // RESPONSIVE
 

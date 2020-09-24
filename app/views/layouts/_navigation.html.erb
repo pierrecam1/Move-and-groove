@@ -1,11 +1,12 @@
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand ml-sm-0 ml-md-5" href="http://localhost:3000"><%=image_tag("/assets/logo.svg") %></a>
-      
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand ml-sm-0 ml-md-5" href="http://localhost:3000"><%=image_tag("/assets/logo.svg") %></a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+    aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
+    </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto mr-5 align-items-baseline">
             <% if current_user %>
                 <li class="nav-item">
@@ -25,33 +26,33 @@
                 <li class="nav-item">
                     <%= link_to "add session", new_post_path, class:"btn btn-primary f-trump btn-style  mb-md-0 mb-3" %>
                 </li>
-                </ul>
-                </div>
-                <div class="dropleft nav-avatar">
-                    <% if current_user.photo.present?%>
-                        
-                        <%= link_to image_tag(current_user.photo.url(:thumb), :class => "avatar-picture"), "#", :id =>"dropdownMenuButton", :data => { :toggle => 'dropdown'} %>
-                    <% else %>
-                        <%= link_to image_tag(current_user.avatar, size:50, :class => "avatar-picture"), '#', :id =>"dropdownMenuButton", :data => { :toggle => 'dropdown'}%>
-                        
-                    <% end %>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <% if user_signed_in? %>
-                            <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, :class=>"dropdown-item" %>
-                            <%= link_to 'Edit profil', edit_user_registration_path, :class=>"dropdown-item" %>
-                        <%end%>
-                    </div>                      
-                </div>
-                    <% else %>
-                        <li class="nav-item">
-                            <%= link_to 'SIGN UP', new_user_registration_path, :class => "btn btn-primary f-trump mr-4 btn-style"  %>
-                        </li>  
-                        <li class="nav-item">
-                            <%= link_to 'LOG IN', new_user_session_path, :class => "btn btn-white f-trump btn-style"  %>
-                        </li>
-                    </ul>
-      </div>
+        </ul>
+    </div>
+    <div class="dropleft nav-avatar">
+        <% if current_user.photo.present?%>
+            
+            <%= link_to image_tag(current_user.photo.url(:thumb), :class => "avatar-picture"), "#", :id =>"dropdownMenuButton", :data => { :toggle => 'dropdown'} %>
+        <% else %>
+            <%= link_to image_tag(current_user.avatar, size:50, :class => "avatar-picture"), '#', :id =>"dropdownMenuButton", :data => { :toggle => 'dropdown'}%>
+            
+        <% end %>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <% if user_signed_in? %>
+                <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, :class=>"dropdown-item" %>
+                <%= link_to 'Edit profil', edit_user_registration_path, :class=>"dropdown-item" %>
+            <%end%>
+        </div>                      
+    </div>
+        <% else %>
+            <li class="nav-item">
+                <%= link_to 'SIGN UP', new_user_registration_path, :class => "btn btn-primary f-trump mr-4 btn-style"  %>
+            </li>  
+            <li class="nav-item">
+                <%= link_to 'LOG IN', new_user_session_path, :class => "btn btn-white f-trump btn-style"  %>
+            </li>
+        </ul>
+    </div>
 
             <% end %>
-        
-    </nav>
+    
+</nav>

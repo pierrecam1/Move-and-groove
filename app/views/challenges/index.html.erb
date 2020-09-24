@@ -1,117 +1,73 @@
-<!--
-<h1>challenge</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Number of day</th>
-      <th>Activity</th>
-      <th>Difficulty</th>
-      <th>Distance</th>
-      <th>Deadline</th>
-      <th>Elevation</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @challenges.each do |challenge| %>
-      <tr>
-        <td><%= challenge.title %></td>
-        <td><%= challenge.number_of_day %></td>
-        <td><%= challenge.activity %></td>
-        <td><%= challenge.difficulty %></td>
-        <td><%= challenge.distance %></td>
-        <td><%= challenge.deadline %></td>
-        <td><%= challenge.elevation %></td>
-        <td><%= link_to 'Show', challenge %></td>
-        <td><%= link_to 'Edit', edit_challenge_path(challenge) %></td>
-        <td><%= link_to 'Destroy', challenge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Challenge', new_challenge_path %>
--->
-
 <header class="challenge-header bg-dark">
-<div class="container py-7">
-  <h1 class="text-white">CHOOSE YOUR Challenge</h1>
-    <label class="text-white mr-3">Select your activity</label>
+  <div class="container py-7">
+    <h1 class="text-white">CHOOSE YOUR Challenge</h1>
+      <label class="text-white mr-3">Select your activity</label>
 
-    <select >
-        <option value="Running">Running</option>
-        <option value="Hiking">Hiking</option>
-        <option value="Cycling">Cycling</option>
-        <option value="Swimming">Swimming</option>
-        <option value="Wheelchair">Wheelchair</option>
-        <option value="Moutain_Biking">Moutain Biking</option>
-        <option value="Snowboarding">Snowboarding</option>
-        <option value="Skiing">Skiing</option>
-        <option value="Walking">Walking</option>
-        <option value="Rowing">Rowing</option>
-        <option value="Wakeboard">Wakeboard</option>    
-    </select>
+      <select id="select-activity">
+          <option value="Running">Running</option>
+          <option value="Hiking">Hiking</option>
+          <option value="Cycling">Cycling</option>
+          <option value="Swimming">Swimming</option>
+          <option value="Wheelchair">Wheelchair</option>
+          <option value="Moutain_Biking">Moutain Biking</option>
+          <option value="Snowboarding">Snowboarding</option>
+          <option value="Skiing">Skiing</option>
+          <option value="Walking">Walking</option>
+          <option value="Rowing">Rowing</option>
+          <option value="Wakeboard">Wakeboard</option>    
+      </select>
  </div>
 </header>
 
 <section>
   <div class="container py-3 d-flex flex-wrap justify-content-start">
     <% @challenges.each do |challenge| %>
-    <div class="col-sm-12 col-md-6 col-lg-4">
+    <div class="col-sm-12 col-md-6 col-lg-4 myAnswers <%= challenge.activity %>">
       <div class="card p-3 shadow mb-3"
       <% if challenge.difficulty == "Hard"%> style="border:none; border-top:8px solid #FF2C2C"<% end %>
-        <% if challenge.difficulty == "Medium"%> style="border:none; border-top:8px solid #D38013"<% end %>
-        <% if challenge.difficulty == "Easy"%> style="border:none; border-top:8px solid #2C82FF"<% end %>
-      
+      <% if challenge.difficulty == "Medium"%> style="border:none; border-top:8px solid #D38013"<% end %>
+      <% if challenge.difficulty == "Easy"%> style="border:none; border-top:8px solid #2C82FF"<% end %>
       >
         <div class="d-flex align-items-baseline">
-              <%= render 'general/activity', obj:challenge %>
+          <%= render 'general/activity', obj:challenge %>
           <h4 class="ml-3"><%= challenge.activity %>: <%= challenge.title %></h4>
           <p class="ml-auto mr-0"><%= challenge.difficulty %></p>
         </div>
         <hr>
         <div class="d-flex justify-content-between">
           <% if challenge.distance.present?%>                        
-          <div class="ml-3"><h4 class="mr-5 mb-0"><%= challenge.distance %> km</h4><p class="mb-0">Distance</p></div>
+            <div class="ml-3"><h4 class="mr-5 mb-0"><%= challenge.distance %> km</h4><p class="mb-0">Distance</p></div>
           <% end %>
           <% if challenge.elevation.present?%>
-          <div><h4 class="mb-0"><%= challenge.elevation %></h4><p class="mb-0">Elevation</p></div>
+            <div><h4 class="mb-0"><%= challenge.elevation %></h4><p class="mb-0">Elevation</p></div>
           <% end %>
           <% if challenge.trick.present?%>
-          <div><h6 class="mb-0 w-50"><%= challenge.trick %></h6><p class="mb-0">Trick</p></div>
+            <div><h6 class="mb-0 w-50"><%= challenge.trick %></h6><p class="mb-0">Trick</p></div>
           <% end %>
           <% if challenge.deadline.present?%>                        
-          <div><h4 class="mr-5 mb-0"><%= pluralize(challenge.deadline, 'day') %></h4><p class="mb-0">Deadline</p></div>
+            <div><h4 class="mr-5 mb-0"><%= pluralize(challenge.deadline, 'day') %></h4><p class="mb-0">Deadline</p></div>
           <% end %>
         </div>
         <hr>
-
-         <!-- <%= button_to 'Like', challenge_likes_path(challenge), method: :post %> -->
-          <% pre_like = challenge.likes.find { |like| like.user_id == current_user.id} %>
-            <% if pre_like %>
-              <%= link_to 'Unaccepted challenge', challenge_like_path(challenge, pre_like), method: :delete, :class=>"text-center mb-1" %>
-              <%=image_tag("/assets/like-ok.svg", :class => "svg-acivities") %>
-            <% else %>
-              <%= link_to 'Accept challenge', challenge_likes_path(challenge), method: :post, :class=>"text-center mb-1" %>
-              <%=image_tag("/assets/like.svg", :class => "svg-acivities") %>
-          <% end %>
-          <div class="d-flex justify-content-between align-items-center">
-              <p class="mb-0"><%= challenge.likes.count %> <%= (challenge.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-                      <div class="align-self-end ml-auto">
-                      <%if user_signed_in? && challenge.user == current_user%>
-                        <%= link_to 'Edit', edit_challenge_path(challenge) %> | 
-                        <%= link_to 'Destroy', challenge, method: :delete, data: { confirm: 'Are you sure?' } %>
-                      <% end %>
-                      </div>
-                    </div>
-                  </div>
-
+        <% pre_like = challenge.likes.find { |like| like.user_id == current_user.id} %>
+          <% if pre_like %>
+            <%= link_to 'Unaccepted challenge', challenge_like_path(challenge, pre_like), method: :delete, :class=>"text-center mb-1" %>
+            <%=image_tag("/assets/like-ok.svg", :class => "svg-acivities") %>
+          <% else %>
+            <%= link_to 'Accept challenge', challenge_likes_path(challenge), method: :post, :class=>"text-center mb-1" %>
+            <%=image_tag("/assets/like.svg", :class => "svg-acivities") %>
+        <% end %>
+        <div class="d-flex justify-content-between align-items-center">
+          <p class="mb-0"><%= challenge.likes.count %> <%= (challenge.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+          <div class="align-self-end ml-auto">
+            <%if user_signed_in? && challenge.user == current_user%>
+              <%= link_to 'Edit', edit_challenge_path(challenge) %> | 
+              <%= link_to 'Destroy', challenge, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
   </div>
-  <% end %>
- 
 </section>
