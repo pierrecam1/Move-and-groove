@@ -1,7 +1,8 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  
+
+
   attr_accessor :login
   has_many :posts
   has_many :challenges
@@ -18,9 +19,6 @@ class User < ApplicationRecord
 
 
 
-  
-
-
   def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
@@ -30,7 +28,6 @@ class User < ApplicationRecord
   end
   
   def self.find_first_by_auth_conditions(warden_conditions)
-
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
       where(conditions.to_hash).where("lower(username) = :value OR lower(email) = :value", value: login.downcase).first
@@ -51,6 +48,7 @@ class User < ApplicationRecord
       # uncomment the line below to skip the confirmation emails.
       user.skip_confirmation!
     end
+    
   end
   
 

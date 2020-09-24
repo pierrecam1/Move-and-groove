@@ -6,7 +6,12 @@ Rails.application.routes.draw do
 
   resources :posts
   default_url_options :host => "localhost:3000"
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, :controllers => {
+    :omniauth_callbacks => "users/omniauth_callbacks",
+    registrations: 'users/registrations'
+  }
+  
+  
   root 'home#index'
   
   get 'home/dashboard'
