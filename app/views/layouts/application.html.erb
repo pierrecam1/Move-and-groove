@@ -14,8 +14,13 @@
 
   <body>
       <%= render 'layouts/navigation'%>
-      <p class="mb-0 alert-success alert-dismissible fade show" role="alert"><%= notice %></p>
-      <p class="mb-0 alert-success alert-dismissible fade show" role="alert"><%= alert %></p>
+      <% if notice.present?%>
+      <p class="mb-0 alert-success alert-dismissible fade show text-center p-2 fade-out" role="alert"><%= notice %></p>
+      <% end %>
+      <% if alert.present?%>
+      <p class="mb-0 alert-success alert-dismissible fade show text-center p-2 fade-out" role="alert"><%= alert %></p>
+      <% end %>
+      
     <%= yield %>
 
   <!-- <%= debug user_signed_in? %>

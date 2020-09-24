@@ -8,10 +8,12 @@
           <div class="field col-md-6 col-sm-12">
               <%= f.label :username %><br />
               <%= f.text_field :username, class:"w-100" %>
+              <p class="error text-danger mb-0"><%= @user.errors[:username][0] %></p>
             </div>
           <div class="field col-md-6 col-sm-12">
             <%= f.label :email %><br />
             <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"w-100"  %>
+            <p class="error text-danger mb-0"><%= @user.errors[:email][0] %></p>
           </div>
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
@@ -27,6 +29,7 @@
             <div class="field col-12">
               <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
               <%= f.password_field :password, autocomplete: "new-password"  %>
+              <p class="error text-danger mb-0"><%= @user.errors[:password][0] %></p>
               <% if @minimum_password_length %>
                 <br />
                 <em><%= @minimum_password_length %> characters minimum</em>
@@ -35,10 +38,12 @@
             <div class="field col-12">
               <%= f.label :password_confirmation %><br />
               <%= f.password_field :password_confirmation, autocomplete: "new-password"%>
+              <p class="error text-danger mb-0"><%= @user.errors[:password_confirmation][0] %></p>
             </div>
             <div class="field col-12">
               <%= f.label :current_password %><br />
               <%= f.password_field :current_password, autocomplete: "current-password" %>
+              <p class="error text-danger mb-0"><%= @user.errors[:current_password][0] %></p>
             </div>
           <% end %>
           <div class="actions">
