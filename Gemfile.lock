@@ -162,10 +162,6 @@ GEM
       rack (>= 1.6.2, < 3)
     omniauth-facebook (7.0.0)
       omniauth-oauth2 (~> 1.2)
-    omniauth-google-oauth2 (0.8.0)
-      jwt (>= 2.0)
-      omniauth (>= 1.1.1)
-      omniauth-oauth2 (>= 1.6)
     omniauth-oauth2 (1.7.0)
       oauth2 (~> 1.4)
       omniauth (~> 1.9)
@@ -311,7 +307,6 @@ DEPENDENCIES
   mailcatcher
   omniauth
   omniauth-facebook
-  omniauth-google-oauth2
   paperclip
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.2)
@@ -326,7 +321,7 @@ DEPENDENCIES
   webpacker (~> 4.0)
 
 RUBY VERSION
-   ruby 2.5.3p105
+   ruby 2.7.2p137
 
 BUNDLED WITH
    2.1.4

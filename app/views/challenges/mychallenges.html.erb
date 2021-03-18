@@ -55,10 +55,10 @@
             <% pre_like = challenge.likes.find { |like| like.user_id == current_user.id} %>
               <% if pre_like %>
                 <%= link_to 'Unaccepted challenge', challenge_like_path(challenge, pre_like), method: :delete, :class=>"text-center mb-1" %>
-                <%=image_tag("/assets/like-ok.svg", :class => "svg-acivities") %>
+                <%=image_tag("/assets/like-ok.svg", :class => "svg-like") %>
               <% else %>
                 <%= link_to 'Accept challenge', challenge_likes_path(challenge), method: :post, :class=>"text-center mb-1" %>
-                <%=image_tag("/assets/like.svg", :class => "svg-acivities") %>
+                <%=image_tag("/assets/like.svg", :class => "svg-like") %>
             <% end %>
             <p><%= challenge.likes.count %> <%= (challenge.likes.count) == 1 ? 'Like' : 'Likes'%></p>
         </div>
